@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "cpi-coding-repro: reproducibility package for coding retail product names to consumer-price categories"
+abstract: >-
+  A fully synthetic, reproducible benchmark and evaluation code for the
+  methodology of arXiv:2606.02004. Includes a synthetic receipt-name generator
+  for six COICOP-like categories, a trie pre-classifier, per-category binary
+  confirmation models (bag-of-words/linear, MLP, CNN, LSTM under one matched
+  protocol), a learning-curve analysis, and a Monte-Carlo validation of the
+  reliability-weighted consensus-labeling rule against majority vote and
+  Dawid-Skene. Contains no proprietary or production data.
+type: software
+authors:
+  - given-names: Vladimir
+    family-names: Beskorovainyi
+    orcid: "https://orcid.org/0009-0004-7005-6242"
+    affiliation: "Besk Tech; Moscow Institute of Physics and Technology (MIPT)"
+version: "1.0.0"
+date-released: "2026-06-26"
+license: MIT
+repository-code: "https://github.com/beskvladimir-create/cpi-coding-repro"
+keywords:
+  - consumer price index
+  - official statistics
+  - text classification
+  - bag-of-words
+  - weak supervision
+  - Dawid-Skene
+  - reproducibility
+preferred-citation:
+  type: article
+  title: "Machine Learning for Coding Retail Product Names to Consumer-Price Categories: A Rule-plus-Bag-of-Words Pipeline with Reliability-Weighted Human-in-the-Loop Labeling"
+  authors:
+    - given-names: Vladimir
+      family-names: Beskorovainyi
+      orcid: "https://orcid.org/0009-0004-7005-6242"
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2606.02004"
+      description: arXiv preprint
+    - type: doi
+      value: "10.5281/zenodo.20503355"
+      description: Zenodo archive of the paper

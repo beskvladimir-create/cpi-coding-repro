@@ -1,0 +1,8 @@
+# NOTE: torch on Intel (x86_64) macOS tops out at 2.2.2, which requires NumPy 1.x.
+# numpy is pinned <2 for that ABI; the rest are pinned to the matching stack.
+numpy<2
+pandas>=2.1,<2.3
+scikit-learn>=1.4
+matplotlib>=3.8
+pyarrow>=15.0
+torch>=2.2,<2.3

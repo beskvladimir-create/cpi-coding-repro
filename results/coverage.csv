@@ -1,0 +1,7 @@
+category,n_items,n_positives,admitted_to_category,ambiguous,unidentified,admitted_other_category,coverage,positive_recall_trie
+granulated_sugar,1650,700,604,0,1046,0,0.3661,0.8043
+milk,1650,700,726,0,924,0,0.44,0.84
+bread,1650,700,724,0,926,0,0.4388,0.8171
+beer,1650,700,824,0,826,0,0.4994,0.8586
+laundry_detergent,1650,700,523,0,1127,0,0.317,0.7471
+fresh_apples,1650,700,571,0,1079,0,0.3461,0.8157

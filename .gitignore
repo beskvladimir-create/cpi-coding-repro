@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+
+# Generated outputs are committed for convenience, but can be regenerated:
+#   make all
+# Uncomment to exclude generated artifacts from version control:
+# results/
+# figures/
+# data/synth/

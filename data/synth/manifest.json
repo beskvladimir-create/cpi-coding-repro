@@ -1,0 +1,111 @@
+{
+  "corpus_seed": 0,
+  "noise_rate": 0.3,
+  "disclaimer": "All data are synthetically generated; this corpus reproduces the methodology of arXiv:2606.02004 and contains no proprietary or production data.",
+  "categories": {
+    "granulated_sugar": {
+      "n_pos": 700,
+      "n_neg": 950,
+      "key_phrases": [
+        "sugar",
+        "granulated sugar",
+        "white sugar"
+      ],
+      "stop_phrases": [
+        "sugar free",
+        "icing sugar",
+        "brown sugar",
+        "cotton candy",
+        "sugary"
+      ],
+      "file": "granulated_sugar.parquet"
+    },
+    "milk": {
+      "n_pos": 700,
+      "n_neg": 950,
+      "key_phrases": [
+        "milk",
+        "whole milk",
+        "semi skimmed milk"
+      ],
+      "stop_phrases": [
+        "milk chocolate",
+        "coconut milk",
+        "soy milk",
+        "oat milk",
+        "milkshake",
+        "condensed milk"
+      ],
+      "file": "milk.parquet"
+    },
+    "bread": {
+      "n_pos": 700,
+      "n_neg": 950,
+      "key_phrases": [
+        "bread",
+        "white bread",
+        "wholemeal bread"
+      ],
+      "stop_phrases": [
+        "bread crumbs",
+        "breadsticks",
+        "gingerbread",
+        "banana bread",
+        "bread maker"
+      ],
+      "file": "bread.parquet"
+    },
+    "beer": {
+      "n_pos": 700,
+      "n_neg": 950,
+      "key_phrases": [
+        "beer",
+        "lager beer",
+        "pale ale"
+      ],
+      "stop_phrases": [
+        "beer free",
+        "alcohol free beer",
+        "ginger beer",
+        "root beer",
+        "beer battered"
+      ],
+      "file": "beer.parquet"
+    },
+    "laundry_detergent": {
+      "n_pos": 700,
+      "n_neg": 950,
+      "key_phrases": [
+        "laundry detergent",
+        "washing powder",
+        "laundry liquid"
+      ],
+      "stop_phrases": [
+        "dish detergent",
+        "dishwasher",
+        "hand wash",
+        "washing up",
+        "fabric softener"
+      ],
+      "file": "laundry_detergent.parquet"
+    },
+    "fresh_apples": {
+      "n_pos": 700,
+      "n_neg": 950,
+      "key_phrases": [
+        "apples",
+        "fresh apples",
+        "gala apples"
+      ],
+      "stop_phrases": [
+        "apple juice",
+        "apple sauce",
+        "apple pie",
+        "pineapple",
+        "apple cider",
+        "dried apple"
+      ],
+      "file": "fresh_apples.parquet"
+    }
+  }
+}
