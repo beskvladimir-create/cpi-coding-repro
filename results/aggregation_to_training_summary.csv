@@ -1,0 +1,25 @@
+model,k,aggregator,train_label_accuracy,test_f1_mean,test_f1_sd
+Char n-gram(3-5) + LogReg,3,Dawid-Skene,0.884621,0.973272,0.0106627
+Char n-gram(3-5) + LogReg,3,Gold (upper bound),1,0.997156,0.00328389
+Char n-gram(3-5) + LogReg,3,Majority,0.814747,0.956086,0.0116168
+Char n-gram(3-5) + LogReg,3,Reliability-weighted,0.814848,0.956197,0.0114668
+Char n-gram(3-5) + LogReg,5,Dawid-Skene,0.944495,0.987792,0.00642836
+Char n-gram(3-5) + LogReg,5,Gold (upper bound),1,0.997156,0.00328389
+Char n-gram(3-5) + LogReg,5,Majority,0.87197,0.969863,0.0131567
+Char n-gram(3-5) + LogReg,5,Reliability-weighted,0.879343,0.971409,0.0124377
+Char n-gram(3-5) + LogReg,7,Dawid-Skene,0.971843,0.99159,0.00691828
+Char n-gram(3-5) + LogReg,7,Gold (upper bound),1,0.997156,0.00328389
+Char n-gram(3-5) + LogReg,7,Majority,0.909495,0.979344,0.0108612
+Char n-gram(3-5) + LogReg,7,Reliability-weighted,0.931894,0.985732,0.00838156
+Unigram BoW + LogReg,3,Dawid-Skene,0.884621,0.951925,0.0188862
+Unigram BoW + LogReg,3,Gold (upper bound),1,0.966066,0.0187533
+Unigram BoW + LogReg,3,Majority,0.814747,0.951762,0.0170372
+Unigram BoW + LogReg,3,Reliability-weighted,0.814848,0.952002,0.0167924
+Unigram BoW + LogReg,5,Dawid-Skene,0.944495,0.963537,0.0150288
+Unigram BoW + LogReg,5,Gold (upper bound),1,0.966066,0.0187533
+Unigram BoW + LogReg,5,Majority,0.87197,0.956187,0.01564
+Unigram BoW + LogReg,5,Reliability-weighted,0.879343,0.957511,0.0151396
+Unigram BoW + LogReg,7,Dawid-Skene,0.971843,0.96497,0.016432
+Unigram BoW + LogReg,7,Gold (upper bound),1,0.966066,0.0187533
+Unigram BoW + LogReg,7,Majority,0.909495,0.95837,0.0207755
+Unigram BoW + LogReg,7,Reliability-weighted,0.931894,0.959403,0.0193884

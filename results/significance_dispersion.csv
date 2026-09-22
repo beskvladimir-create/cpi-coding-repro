@@ -1,0 +1,31 @@
+category,model,f1_mean,f1_sd,ci95_low,ci95_high
+beer,BoW+MLP(256),0.970633,0.0105215,0.957569,0.983697
+beer,Char n-gram(3-5) + LogReg,0.996456,0.00432774,0.991083,1.00183
+beer,Unigram BoW + LogReg,0.961395,0.0146571,0.943196,0.979595
+beer,Word 1-2-gram + LogReg,0.967505,0.0151836,0.948652,0.986358
+beer,Word 1-3-gram + LogReg,0.964028,0.014992,0.945413,0.982643
+bread,BoW+MLP(256),0.973019,0.00997708,0.960631,0.985408
+bread,Char n-gram(3-5) + LogReg,0.993604,0.00158604,0.991635,0.995574
+bread,Unigram BoW + LogReg,0.958426,0.0182718,0.935739,0.981114
+bread,Word 1-2-gram + LogReg,0.961891,0.0117574,0.947292,0.976489
+bread,Word 1-3-gram + LogReg,0.959756,0.0120099,0.944844,0.974668
+fresh_apples,BoW+MLP(256),0.986461,0.00457509,0.98078,0.992142
+fresh_apples,Char n-gram(3-5) + LogReg,1,0,1,1
+fresh_apples,Unigram BoW + LogReg,0.981751,0.01124,0.967795,0.995708
+fresh_apples,Word 1-2-gram + LogReg,0.982463,0.0116507,0.967997,0.996929
+fresh_apples,Word 1-3-gram + LogReg,0.981692,0.0132777,0.965206,0.998179
+granulated_sugar,BoW+MLP(256),0.978656,0.0112009,0.964749,0.992564
+granulated_sugar,Char n-gram(3-5) + LogReg,0.99573,0.00297753,0.992032,0.999427
+granulated_sugar,Unigram BoW + LogReg,0.957915,0.0134706,0.941189,0.974641
+granulated_sugar,Word 1-2-gram + LogReg,0.954823,0.0160617,0.93488,0.974767
+granulated_sugar,Word 1-3-gram + LogReg,0.951248,0.0161651,0.931177,0.97132
+laundry_detergent,BoW+MLP(256),0.988576,0.00388526,0.983752,0.9934
+laundry_detergent,Char n-gram(3-5) + LogReg,1,0,1,1
+laundry_detergent,Unigram BoW + LogReg,0.985481,0.0058121,0.978264,0.992697
+laundry_detergent,Word 1-2-gram + LogReg,0.98248,0.00998042,0.970088,0.994873
+laundry_detergent,Word 1-3-gram + LogReg,0.980239,0.0110815,0.96648,0.993999
+milk,BoW+MLP(256),0.963874,0.0091801,0.952475,0.975272
+milk,Char n-gram(3-5) + LogReg,0.997143,0.00298809,0.993433,1.00085
+milk,Unigram BoW + LogReg,0.95143,0.0207295,0.925691,0.977169
+milk,Word 1-2-gram + LogReg,0.953289,0.0210845,0.927109,0.979469
+milk,Word 1-3-gram + LogReg,0.951141,0.0193208,0.927151,0.975131

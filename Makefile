@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data trie confirm consensus clean
+.PHONY: all data trie confirm consensus audit clean
 
 all:
 	$(PY) src/run_all.py
@@ -16,6 +16,9 @@ confirm: data
 
 consensus:
 	$(PY) src/consensus_sim.py
+
+audit: data
+	cd src && $(PY) leakage_audit.py && $(PY) significance.py && $(PY) aggregation_to_training.py
 
 clean:
 	rm -f data/synth/*.parquet data/synth/manifest.json

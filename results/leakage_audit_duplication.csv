@@ -1,0 +1,7 @@
+category,n_items,n_distinct,distinct_share,n_distinct_pos,n_distinct_neg,strings_with_both_labels
+granulated_sugar,1650,1261,0.7642,611,650,0
+milk,1650,1289,0.7812,607,682,0
+bread,1650,1206,0.7309,590,616,0
+beer,1650,1204,0.7297,577,627,0
+laundry_detergent,1650,1263,0.7655,606,657,0
+fresh_apples,1650,1256,0.7612,609,647,0

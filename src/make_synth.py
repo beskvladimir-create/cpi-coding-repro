@@ -189,8 +189,11 @@ def generate_category(cfg: CategoryConfig, seed: int) -> pd.DataFrame:
     rng = np.random.RandomState(seed)
     rows = []
     for _ in range(cfg.n_pos):
+        # NOTE: the next line is superseded by the assignment below and its
+        # result is unused. It is kept deliberately because it consumes random
+        # draws: removing it would change the published corpus and every
+        # reported number. Key phrases therefore always keep their order.
         core = list(rng.permutation(cfg.key_phrases[rng.randint(len(cfg.key_phrases))]))
-        # keep key-phrase order intact most of the time so the trie can match
         core = cfg.key_phrases[rng.randint(len(cfg.key_phrases))]
         rows.append((_assemble(core, cfg, rng, positive=True), 1))
     for _ in range(cfg.n_neg):

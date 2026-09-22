@@ -14,3 +14,8 @@ venv/
 # results/
 # figures/
 # data/synth/
+
+# Per-run outputs of the audit scripts (regenerate: make audit)
+results/aggregation_to_training.csv
+results/leakage_audit_reeval.csv
+results/significance_per_seed.csv
