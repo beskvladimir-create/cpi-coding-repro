@@ -1,12 +1,12 @@
 # cpi-coding-repro
 
-Reproducibility package for the methodology of **arXiv:2606.02004**
+Reproducibility package for the methodology of **arXiv:2606.02004v3**
 ("Machine Learning for Coding Retail Product Names to Consumer-Price
 Categories").
 
 > **All data in this repository are synthetically generated.** They are
 > produced in code from fixed seeds. This repository reproduces the
-> *methodology* of arXiv:2606.02004 and contains **no proprietary or
+> *methodology* of arXiv:2606.02004v3 and contains **no proprietary or
 > production data** of any kind.
 
 It empirically strengthens the claims of the preprint's "Strengthening the

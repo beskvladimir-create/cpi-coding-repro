@@ -3,20 +3,25 @@ message: "If you use this software, please cite the accompanying paper."
 title: "cpi-coding-repro: reproducibility package for coding retail product names to consumer-price categories"
 abstract: >-
   A fully synthetic, reproducible benchmark and evaluation code for the
-  methodology of arXiv:2606.02004. Includes a synthetic receipt-name generator
+  methodology of arXiv:2606.02004v3. Includes a synthetic receipt-name generator
   for six COICOP-like categories, a trie pre-classifier, per-category binary
   confirmation models (bag-of-words/linear, MLP, CNN, LSTM under one matched
   protocol), a learning-curve analysis, and a Monte-Carlo validation of the
   reliability-weighted consensus-labeling rule against majority vote and
-  Dawid-Skene. Contains no proprietary or production data.
+  Dawid-Skene. Release 1.1.0 adds three audits: corpus duplication and
+  train/test overlap with re-evaluation on unseen items, per-seed dispersion
+  with Holm-corrected paired Wilcoxon tests, and an end-to-end run in which
+  aggregated crowd votes replace gold training labels. Contains no
+  proprietary or production data.
 type: software
 authors:
   - given-names: Vladimir
     family-names: Beskorovainyi
     orcid: "https://orcid.org/0009-0004-7005-6242"
     affiliation: "Besk Tech; Moscow Institute of Physics and Technology (MIPT)"
-version: "1.0.0"
-date-released: "2026-06-26"
+version: "1.1.0"
+date-released: "2026-09-22"
+doi: "10.5281/zenodo.20909562"
 license: MIT
 repository-code: "https://github.com/beskvladimir-create/cpi-coding-repro"
 keywords:
@@ -37,8 +42,8 @@ preferred-citation:
   year: 2026
   identifiers:
     - type: other
-      value: "arXiv:2606.02004"
-      description: arXiv preprint
+      value: "arXiv:2606.02004v3"
+      description: arXiv preprint, the version these results reproduce
     - type: doi
       value: "10.5281/zenodo.20503355"
       description: Zenodo archive of the paper
