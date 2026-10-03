@@ -2,25 +2,31 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the accompanying paper."
 title: "cpi-coding-repro: reproducibility package for coding retail product names to consumer-price categories"
 abstract: >-
-  A fully synthetic, reproducible benchmark and evaluation code for the
-  methodology of arXiv:2606.02004v3. Includes a synthetic receipt-name generator
-  for six COICOP-like categories, a trie pre-classifier, per-category binary
-  confirmation models (bag-of-words/linear, MLP, CNN, LSTM under one matched
-  protocol), a learning-curve analysis, and a Monte-Carlo validation of the
-  reliability-weighted consensus-labeling rule against majority vote and
-  Dawid-Skene. Release 1.1.0 adds three audits: corpus duplication and
-  train/test overlap with re-evaluation on unseen items, per-seed dispersion
-  with Holm-corrected paired Wilcoxon tests, and an end-to-end run in which
-  aggregated crowd votes replace gold training labels. Contains no
-  proprietary or production data.
+  A fully synthetic, reproducible benchmark and evaluation code for coding
+  short retail product names to consumer-price categories, accompanying
+  arXiv:2606.02004. Includes a synthetic receipt-name generator for six
+  COICOP-like categories, a trie pre-classifier, per-category binary
+  confirmation models (bag-of-words and character n-gram logistic regression,
+  an MLP, a CNN and an LSTM under one matched protocol), a learning-curve
+  analysis, and a Monte-Carlo validation of the reliability-weighted
+  consensus-labeling rule against majority vote and Dawid-Skene. Release 2.0.0
+  matches the training budget across model families: the convolutional and
+  recurrent models previously ran for a fixed eight epochs while every other
+  model ran to its own convergence criterion, and they now stop on the same
+  loss-improvement rule, which changes their reported accuracy. It also adds a
+  computational cost benchmark (training time, inference throughput, model
+  size, peak memory) and robustness checks covering the training budget, the
+  decision threshold, the measurement batch size, and batch against online
+  label aggregation. Release 1.1.0 remains the version that reproduces the
+  numbers of arXiv:2606.02004v3. Contains no proprietary or production data.
 type: software
 authors:
   - given-names: Vladimir
     family-names: Beskorovainyi
     orcid: "https://orcid.org/0009-0004-7005-6242"
     affiliation: "Besk Tech; Moscow Institute of Physics and Technology (MIPT)"
-version: "1.1.0"
-date-released: "2026-09-22"
+version: "2.0.0"
+date-released: "2026-10-03"
 doi: "10.5281/zenodo.20909562"
 license: MIT
 repository-code: "https://github.com/beskvladimir-create/cpi-coding-repro"
@@ -43,7 +49,7 @@ preferred-citation:
   identifiers:
     - type: other
       value: "arXiv:2606.02004v3"
-      description: arXiv preprint, the version these results reproduce
+      description: arXiv preprint; its numbers are reproduced by release 1.1.0 of this package
     - type: doi
       value: "10.5281/zenodo.20503355"
       description: Zenodo archive of the paper

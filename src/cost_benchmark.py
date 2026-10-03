@@ -45,7 +45,11 @@ from sklearn.neural_network import MLPClassifier
 import confirm_models as cm
 from make_synth import _categories
 
-warnings.filterwarnings("ignore")
+# Same narrow filter as confirm_models: a blanket "ignore" here would hide a
+# ConvergenceWarning raised while timing a fit.
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 REPEATS = 3  # inference is fast; take the best of a few passes to cut jitter
