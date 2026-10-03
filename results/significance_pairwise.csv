@@ -1,11 +1,22 @@
 model_a,model_b,n,mean_diff,a_wins,b_wins,ties,p_raw,p_holm
-BoW+MLP(256),Char n-gram(3-5) + LogReg,30,-0.0202856,0,30,0,1.72786e-06,1.72786e-05
-Char n-gram(3-5) + LogReg,Unigram BoW + LogReg,30,0.0310891,30,0,0,1.73222e-06,1.72786e-05
-Char n-gram(3-5) + LogReg,Word 1-2-gram + LogReg,30,0.0300803,30,0,0,1.72786e-06,1.72786e-05
-Char n-gram(3-5) + LogReg,Word 1-3-gram + LogReg,30,0.0324715,30,0,0,1.73222e-06,1.72786e-05
-BoW+MLP(256),Word 1-3-gram + LogReg,30,0.0121858,25,5,0,1.82446e-05,0.000109468
-BoW+MLP(256),Unigram BoW + LogReg,30,0.0108034,25,5,0,4.0696e-05,0.00020348
-Word 1-2-gram + LogReg,Word 1-3-gram + LogReg,30,0.00239114,17,0,13,0.000293053,0.00117221
-BoW+MLP(256),Word 1-2-gram + LogReg,30,0.00979469,23,7,0,0.000453198,0.0013596
-Unigram BoW + LogReg,Word 1-3-gram + LogReg,30,0.0013824,17,9,4,0.158661,0.317323
-Unigram BoW + LogReg,Word 1-2-gram + LogReg,30,-0.00100875,10,12,8,0.505701,0.505701
+CNN,Char n-gram(3-5) + LogReg,30,-0.0511506,0,30,0,1.86265e-09,3.91155e-08
+BoW+MLP(256),CNN,30,0.030865,29,1,0,3.72529e-09,7.45058e-08
+BoW+MLP(256),LSTM,30,0.0346914,28,2,0,9.31323e-09,1.76951e-07
+CNN,Word 1-2-gram + LogReg,30,-0.0210703,1,29,0,1.02445e-07,1.84402e-06
+LSTM,Unigram BoW + LogReg,30,-0.023888,2,28,0,1.02445e-07,1.84402e-06
+CNN,Word 1-3-gram + LogReg,30,-0.0186792,2,28,0,1.63913e-07,2.6226e-06
+CNN,Unigram BoW + LogReg,30,-0.0200616,3,27,0,1.63913e-07,2.6226e-06
+LSTM,Word 1-2-gram + LogReg,30,-0.0248967,2,28,0,3.14787e-07,4.40702e-06
+LSTM,Word 1-3-gram + LogReg,30,-0.0225056,3,27,0,8.32602e-07,1.08238e-05
+Char n-gram(3-5) + LogReg,Unigram BoW + LogReg,30,0.0310891,30,0,0,1.73222e-06,2.07343e-05
+Char n-gram(3-5) + LogReg,LSTM,30,0.0549771,30,0,0,1.73331e-06,2.07343e-05
+Char n-gram(3-5) + LogReg,Word 1-3-gram + LogReg,30,0.0324715,30,0,0,1.73222e-06,2.07343e-05
+Char n-gram(3-5) + LogReg,Word 1-2-gram + LogReg,30,0.0300803,30,0,0,1.72786e-06,2.07343e-05
+BoW+MLP(256),Char n-gram(3-5) + LogReg,30,-0.0202856,0,30,0,1.72786e-06,2.07343e-05
+BoW+MLP(256),Word 1-3-gram + LogReg,30,0.0121858,25,5,0,1.82446e-05,0.000127712
+BoW+MLP(256),Unigram BoW + LogReg,30,0.0108034,25,5,0,4.0696e-05,0.000244176
+Word 1-2-gram + LogReg,Word 1-3-gram + LogReg,30,0.00239114,17,0,13,0.000293053,0.00146526
+BoW+MLP(256),Word 1-2-gram + LogReg,30,0.00979469,23,7,0,0.000453198,0.00181279
+Unigram BoW + LogReg,Word 1-3-gram + LogReg,30,0.0013824,17,9,4,0.158661,0.475984
+CNN,LSTM,30,0.00382641,19,11,0,0.298844,0.597688
+Unigram BoW + LogReg,Word 1-2-gram + LogReg,30,-0.00100875,10,12,8,0.505701,0.597688
