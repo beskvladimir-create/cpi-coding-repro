@@ -55,6 +55,30 @@ RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 REPEATS = 3  # inference is fast; take the best of a few passes to cut jitter
 
 
+def _cold_start_probe() -> dict:
+    """Time the very first torch fit in this process, before any warm-up.
+
+    Reported in the results so the appendix can quote a current figure for
+    framework initialisation rather than one carried over from an earlier run.
+    """
+    if not cm.TORCH_OK:
+        return {}
+    df = pd.read_parquet(cm.DATA_DIR / "granulated_sugar.parquet")
+    X_tr, _X_te, y_tr, _y_te = train_test_split(
+        df.text.tolist(), df.label.values, test_size=0.2,
+        stratify=df.label.values, random_state=0)
+    t0 = time.perf_counter()
+    _m, _s, n_epochs = cm.train_torch("CNN", X_tr, y_tr, 0)
+    cold = time.perf_counter() - t0
+    t0 = time.perf_counter()
+    _m, _s, _n = cm.train_torch("CNN", X_tr, y_tr, 0)
+    warm = time.perf_counter() - t0
+    print(f"  cold first fit {cold:.2f}s vs warm {warm:.2f}s ({n_epochs} epochs)")
+    return {"cold_s": round(cold, 3), "warm_s": round(warm, 3),
+            "n_epochs": n_epochs, "model": "CNN",
+            "category": "granulated_sugar", "seed": 0}
+
+
 def _warm_up() -> None:
     """Absorb one-off framework initialisation before any timing is taken.
 
@@ -143,41 +167,25 @@ def _measure_sklearn(model_name: str, X_tr, y_tr, X_te, seed: int) -> dict:
 
 
 def _measure_torch(kind: str, X_tr, y_tr, X_te, seed: int) -> dict:
+    """Time the SAME training function the accuracy results come from.
+
+    This deliberately calls cm.train_torch instead of carrying its own loop,
+    so the budget measured here cannot drift from the budget evaluated there.
+    """
     import torch
-    import torch.nn as nn
     torch.set_num_threads(1)
-    torch.manual_seed(seed)
-    np.random.seed(seed)
 
     tracemalloc.start()
     t0 = time.perf_counter()
-    stoi = cm._build_vocab(X_tr)
-    Xtr = torch.tensor(cm._encode(X_tr, stoi))
-    ytr = torch.tensor(np.asarray(y_tr), dtype=torch.float32)
-    model = cm._CNN(len(stoi)) if kind == "CNN" else cm._LSTM(len(stoi))
-    opt = torch.optim.Adam(model.parameters(), lr=2e-3)
-    loss_fn = nn.BCEWithLogitsLoss()
-    model.train()
-    bs = 128
-    for _epoch in range(8):
-        perm = torch.randperm(len(Xtr))
-        for i in range(0, len(Xtr), bs):
-            idx = perm[i:i + bs]
-            opt.zero_grad()
-            loss = loss_fn(model(Xtr[idx]), ytr[idx])
-            loss.backward()
-            opt.step()
+    model, stoi, n_epochs = cm.train_torch(kind, X_tr, y_tr, seed)
     fit_s = time.perf_counter() - t0
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
 
-    model.eval()
     best = None
     for _ in range(REPEATS):
         t0 = time.perf_counter()
-        with torch.no_grad():
-            Xte = torch.tensor(cm._encode(X_te, stoi))
-            (torch.sigmoid(model(Xte)) > 0.5).long().numpy()
+        cm.predict_torch(model, stoi, X_te)
         dt = time.perf_counter() - t0
         best = dt if best is None else min(best, dt)
 
@@ -191,6 +199,7 @@ def _measure_torch(kind: str, X_tr, y_tr, X_te, seed: int) -> dict:
         "peak_mib": peak / 2 ** 20,
         "n_params": int(sum(p.numel() for p in model.parameters())),
         "vocab_size": len(stoi),
+        "n_epochs": n_epochs,
     }
 
 
@@ -218,7 +227,10 @@ def run() -> pd.DataFrame:
     cols = ["category", "seed", "model", "n_train", "n_test", "fit_s",
             "predict_s", "throughput_items_s", "size_bytes", "peak_mib",
             "n_params", "vocab_size"]
-    return pd.DataFrame(rows)[cols]
+    df = pd.DataFrame(rows)
+    if "n_epochs" in df.columns:          # torch models only; audits the budget
+        cols = cols + ["n_epochs"]
+    return df[cols]
 
 
 def summarize(per_run: pd.DataFrame) -> pd.DataFrame:
@@ -270,6 +282,7 @@ def environment() -> dict:
 
 def main() -> None:
     print("torch available:", cm.TORCH_OK)
+    cold = _cold_start_probe()
     _warm_up()
     per_run = run()
     summary = summarize(per_run)
@@ -279,6 +292,7 @@ def main() -> None:
     summary.to_csv(RESULTS_DIR / "cost_benchmark_summary.csv",
                    index=False, float_format="%.6g")
     env = environment()
+    env["cold_start_probe_s"] = cold
     (RESULTS_DIR / "cost_benchmark_env.json").write_text(
         json.dumps(env, indent=2) + "\n")
     pd.set_option("display.width", 200)

@@ -165,13 +165,23 @@ TORCH_TOL = 1e-4
 TORCH_N_ITER_NO_CHANGE = 10
 
 
-def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
+def train_torch(kind: str, X_tr, y_tr, seed: int):
+    """Fit one torch model under the stopping rule above.
+
+    This is the single implementation of torch training in the package. The
+    cost benchmark times this function rather than reimplementing the loop:
+    an earlier version kept its own copy, which silently stayed on the old
+    fixed eight-epoch budget after this one moved to a convergence criterion,
+    so the reported training cost belonged to a different configuration from
+    the reported accuracy. One function, one budget.
+
+    Returns (model, stoi, n_epochs).
+    """
     torch.manual_seed(seed)
     np.random.seed(seed)
-    t0 = time.time()
+    torch.set_num_threads(1)
     stoi = _build_vocab(X_tr)                       # vocab on TRAIN only
     Xtr = torch.tensor(_encode(X_tr, stoi))
-    Xte = torch.tensor(_encode(X_te, stoi))
     ytr = torch.tensor(np.asarray(y_tr), dtype=torch.float32)
     model = _CNN(len(stoi)) if kind == "CNN" else _LSTM(len(stoi))
     opt = torch.optim.Adam(model.parameters(), lr=2e-3)
@@ -185,8 +195,7 @@ def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
         for i in range(0, len(Xtr), bs):
             idx = perm[i:i + bs]
             opt.zero_grad()
-            out = model(Xtr[idx])
-            loss = loss_fn(out, ytr[idx])
+            loss = loss_fn(model(Xtr[idx]), ytr[idx])
             loss.backward()
             opt.step()
             total += float(loss.detach())
@@ -197,9 +206,19 @@ def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
         best_loss = min(best_loss, epoch_loss)
         if no_improve >= TORCH_N_ITER_NO_CHANGE:
             break
+    return model, stoi, n_epochs
+
+
+def predict_torch(model, stoi, X):
     model.eval()
     with torch.no_grad():
-        pred = (torch.sigmoid(model(Xte)) > 0.5).long().numpy()
+        return (torch.sigmoid(model(torch.tensor(_encode(X, stoi)))) > 0.5).long().numpy()
+
+
+def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
+    t0 = time.time()
+    model, stoi, n_epochs = train_torch(kind, X_tr, y_tr, seed)
+    pred = predict_torch(model, stoi, X_te)
     m = _metrics(y_te, pred)
     m["train_s"] = time.time() - t0
     m["n_epochs"] = n_epochs
