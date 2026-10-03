@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data trie confirm consensus audit cost clean
+.PHONY: all data trie confirm consensus audit cost robust clean
 
 all:
 	$(PY) src/run_all.py
@@ -22,6 +22,9 @@ audit: data
 
 cost: data
 	cd src && $(PY) cost_benchmark.py
+
+robust: data
+	cd src && $(PY) robustness_checks.py && $(PY) aggregation_passes.py
 
 clean:
 	rm -f data/synth/*.parquet data/synth/manifest.json

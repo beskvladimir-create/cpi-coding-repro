@@ -9,5 +9,5 @@
   "pandas": "3.0.5",
   "torch": "2.14.1+cu130",
   "torch_threads": 1,
-  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz"
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.80GHz"
 }

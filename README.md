@@ -42,6 +42,8 @@ never silently dropped.
 | `src/leakage_audit.py` | Train/test overlap, re-evaluation on unseen test items and under dedupe-then-split, and a trie audit (coverage against its 42.4% construction ceiling, positives lost, trie precision). |
 | `src/significance.py` | Per-seed F1, s.d. and 95% t-intervals per category; paired Wilcoxon signed-rank tests over the 30 (category, seed) pairs, Holm-corrected. CNN/LSTM join when PyTorch is installed. |
 | `src/cost_benchmark.py` | Computational cost of every confirmation model under the same matched protocol: training time, inference throughput with feature extraction included, serialized size, parameter count and peak heap allocation, for all 30 (category, seed) cells. Both families are warmed up once before any timing is taken, because the first call into a deep-learning framework in a process pays one-off initialisation unrelated to the model. Medians and standard deviations in `results/cost_benchmark_summary.csv`, per-cell figures in `results/cost_benchmark_per_run.csv`, and the measured environment in `results/cost_benchmark_env.json`. |
+| `src/robustness_checks.py` | Checks behind the robustness appendix: convergence of every model against its iteration limit; the deep models under a fixed 8-epoch budget, a fixed 40-epoch budget and the matched stopping rule; the ranking under average precision as well as F1; and throughput measured at 330, 3,300, 33,000 and 330,000 items. |
+| `src/aggregation_passes.py` | Whether the Dawid-Skene advantage is an artefact of batch against online processing: the reliability-weighted rule re-run with 1, 2, 5 and 20 passes over the items. |
 | `src/aggregation_to_training.py` | End-to-end link between labeling and modeling: training labels replaced by simulated crowd votes, aggregated by majority, the reliability-weighted rule and Dawid-Skene, then used to train the classifiers, scored on clean test labels. Summary in `results/aggregation_to_training_summary.csv`; per-cell figures in `results/aggregation_to_training.csv`. |
 
 ## Honesty requirements (also enforced in code comments)
@@ -63,6 +65,7 @@ make confirm     # confirmation models
 make consensus   # consensus simulation
 make audit       # leakage audit, trie audit, significance tests, aggregation-to-training
 make cost        # computational cost of every model (timings; run on an idle machine)
+make robust      # robustness checks: training budget, decision threshold, batch size, aggregation passes
                  # (also writes the per-run CSVs, which are not committed)
 make clean       # remove generated data/results/figures
 ```

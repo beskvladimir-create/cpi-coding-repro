@@ -4,208 +4,208 @@ granulated_sugar,0,Word 1-2-gram + LogReg,0.970588
 granulated_sugar,0,Word 1-3-gram + LogReg,0.967033
 granulated_sugar,0,Char n-gram(3-5) + LogReg,1
 granulated_sugar,0,BoW+MLP(256),0.982206
-granulated_sugar,0,CNN,0.942446
-granulated_sugar,0,LSTM,0.939929
+granulated_sugar,0,CNN,0.974359
+granulated_sugar,0,LSTM,0.936803
 granulated_sugar,1,Unigram BoW + LogReg,0.945848
 granulated_sugar,1,Word 1-2-gram + LogReg,0.938628
 granulated_sugar,1,Word 1-3-gram + LogReg,0.935252
 granulated_sugar,1,Char n-gram(3-5) + LogReg,0.992857
 granulated_sugar,1,BoW+MLP(256),0.961131
-granulated_sugar,1,CNN,0.926471
-granulated_sugar,1,LSTM,0.918519
+granulated_sugar,1,CNN,0.941606
+granulated_sugar,1,LSTM,0.963235
 granulated_sugar,2,Unigram BoW + LogReg,0.940741
 granulated_sugar,2,Word 1-2-gram + LogReg,0.93633
 granulated_sugar,2,Word 1-3-gram + LogReg,0.932836
 granulated_sugar,2,Char n-gram(3-5) + LogReg,0.992908
 granulated_sugar,2,BoW+MLP(256),0.974729
-granulated_sugar,2,CNN,0.916968
-granulated_sugar,2,LSTM,0.942446
+granulated_sugar,2,CNN,0.940741
+granulated_sugar,2,LSTM,0.941176
 granulated_sugar,3,Unigram BoW + LogReg,0.967972
 granulated_sugar,3,Word 1-2-gram + LogReg,0.964286
 granulated_sugar,3,Word 1-3-gram + LogReg,0.964286
 granulated_sugar,3,Char n-gram(3-5) + LogReg,0.996441
 granulated_sugar,3,BoW+MLP(256),0.985816
-granulated_sugar,3,CNN,0.950704
-granulated_sugar,3,LSTM,0.946619
+granulated_sugar,3,CNN,0.975089
+granulated_sugar,3,LSTM,0.978723
 granulated_sugar,4,Unigram BoW + LogReg,0.967742
 granulated_sugar,4,Word 1-2-gram + LogReg,0.964286
 granulated_sugar,4,Word 1-3-gram + LogReg,0.956835
 granulated_sugar,4,Char n-gram(3-5) + LogReg,0.996441
 granulated_sugar,4,BoW+MLP(256),0.989399
-granulated_sugar,4,CNN,0.921933
-granulated_sugar,4,LSTM,0.930403
+granulated_sugar,4,CNN,0.933333
+granulated_sugar,4,LSTM,0.929368
 milk,0,Unigram BoW + LogReg,0.924242
 milk,0,Word 1-2-gram + LogReg,0.932331
 milk,0,Word 1-3-gram + LogReg,0.932331
 milk,0,Char n-gram(3-5) + LogReg,0.996416
 milk,0,BoW+MLP(256),0.960573
-milk,0,CNN,0.931298
-milk,0,LSTM,0.898438
+milk,0,CNN,0.935361
+milk,0,LSTM,0.93985
 milk,1,Unigram BoW + LogReg,0.970803
 milk,1,Word 1-2-gram + LogReg,0.971014
 milk,1,Word 1-3-gram + LogReg,0.967273
 milk,1,Char n-gram(3-5) + LogReg,1
 milk,1,BoW+MLP(256),0.978417
-milk,1,CNN,0.957143
-milk,1,LSTM,0.924138
+milk,1,CNN,0.951389
+milk,1,LSTM,0.94198
 milk,2,Unigram BoW + LogReg,0.953405
 milk,2,Word 1-2-gram + LogReg,0.950704
 milk,2,Word 1-3-gram + LogReg,0.947368
 milk,2,Char n-gram(3-5) + LogReg,0.996441
 milk,2,BoW+MLP(256),0.961938
-milk,2,CNN,0.946996
-milk,2,LSTM,0.945055
+milk,2,CNN,0.961131
+milk,2,LSTM,0.960854
 milk,3,Unigram BoW + LogReg,0.937269
 milk,3,Word 1-2-gram + LogReg,0.933824
 milk,3,Word 1-3-gram + LogReg,0.933824
 milk,3,Char n-gram(3-5) + LogReg,0.992857
 milk,3,BoW+MLP(256),0.953405
-milk,3,CNN,0.948529
-milk,3,LSTM,0.955882
+milk,3,CNN,0.962963
+milk,3,LSTM,0.95941
 milk,4,Unigram BoW + LogReg,0.971429
 milk,4,Word 1-2-gram + LogReg,0.978571
 milk,4,Word 1-3-gram + LogReg,0.97491
 milk,4,Char n-gram(3-5) + LogReg,1
 milk,4,BoW+MLP(256),0.965035
-milk,4,CNN,0.967033
-milk,4,LSTM,0.970803
+milk,4,CNN,0.955882
+milk,4,LSTM,0.963504
 bread,0,Unigram BoW + LogReg,0.953737
 bread,0,Word 1-2-gram + LogReg,0.964029
 bread,0,Word 1-3-gram + LogReg,0.960573
 bread,0,Char n-gram(3-5) + LogReg,0.992908
 bread,0,BoW+MLP(256),0.968198
-bread,0,CNN,0.93007
-bread,0,LSTM,0.950355
+bread,0,CNN,0.950704
+bread,0,LSTM,0.964286
 bread,1,Unigram BoW + LogReg,0.985816
 bread,1,Word 1-2-gram + LogReg,0.978571
 bread,1,Word 1-3-gram + LogReg,0.978571
 bread,1,Char n-gram(3-5) + LogReg,0.992857
 bread,1,BoW+MLP(256),0.989399
-bread,1,CNN,0.951389
-bread,1,LSTM,0.945205
+bread,1,CNN,0.972222
+bread,1,LSTM,0.955631
 bread,2,Unigram BoW + LogReg,0.952381
 bread,2,Word 1-2-gram + LogReg,0.956204
 bread,2,Word 1-3-gram + LogReg,0.952727
 bread,2,Char n-gram(3-5) + LogReg,0.992908
 bread,2,BoW+MLP(256),0.967273
-bread,2,CNN,0.912548
-bread,2,LSTM,0.886364
+bread,2,CNN,0.951311
+bread,2,LSTM,0.935361
 bread,3,Unigram BoW + LogReg,0.964029
 bread,3,Word 1-2-gram + LogReg,0.964029
 bread,3,Word 1-3-gram + LogReg,0.960289
 bread,3,Char n-gram(3-5) + LogReg,0.996441
 bread,3,BoW+MLP(256),0.975439
-bread,3,CNN,0.924188
-bread,3,LSTM,0.935714
+bread,3,CNN,0.953737
+bread,3,LSTM,0.940351
 bread,4,Unigram BoW + LogReg,0.93617
 bread,4,Word 1-2-gram + LogReg,0.946619
 bread,4,Word 1-3-gram + LogReg,0.946619
 bread,4,Char n-gram(3-5) + LogReg,0.992908
 bread,4,BoW+MLP(256),0.964789
-bread,4,CNN,0.918149
-bread,4,LSTM,0.899281
+bread,4,CNN,0.958042
+bread,4,LSTM,0.953737
 beer,0,Unigram BoW + LogReg,0.956522
 beer,0,Word 1-2-gram + LogReg,0.955882
 beer,0,Word 1-3-gram + LogReg,0.955882
 beer,0,Char n-gram(3-5) + LogReg,1
 beer,0,BoW+MLP(256),0.982332
-beer,0,CNN,0.93633
-beer,0,LSTM,0.935252
+beer,0,CNN,0.948529
+beer,0,LSTM,0.947761
 beer,1,Unigram BoW + LogReg,0.975265
 beer,1,Word 1-2-gram + LogReg,0.985714
 beer,1,Word 1-3-gram + LogReg,0.982079
 beer,1,Char n-gram(3-5) + LogReg,0.996441
 beer,1,BoW+MLP(256),0.971831
-beer,1,CNN,0.954064
-beer,1,LSTM,0.951049
+beer,1,CNN,0.961404
+beer,1,LSTM,0.957143
 beer,2,Unigram BoW + LogReg,0.946619
 beer,2,Word 1-2-gram + LogReg,0.960573
 beer,2,Word 1-3-gram + LogReg,0.950355
 beer,2,Char n-gram(3-5) + LogReg,0.996441
 beer,2,BoW+MLP(256),0.958042
-beer,2,CNN,0.947735
-beer,2,LSTM,0.94198
+beer,2,CNN,0.961672
+beer,2,LSTM,0.955017
 beer,3,Unigram BoW + LogReg,0.978571
 beer,3,Word 1-2-gram + LogReg,0.981949
 beer,3,Word 1-3-gram + LogReg,0.978417
 beer,3,Char n-gram(3-5) + LogReg,1
 beer,3,BoW+MLP(256),0.979021
-beer,3,CNN,0.948148
-beer,3,LSTM,0.959707
+beer,3,CNN,0.967033
+beer,3,LSTM,0.963504
 beer,4,Unigram BoW + LogReg,0.95
 beer,4,Word 1-2-gram + LogReg,0.953405
 beer,4,Word 1-3-gram + LogReg,0.953405
 beer,4,Char n-gram(3-5) + LogReg,0.989399
 beer,4,BoW+MLP(256),0.961938
-beer,4,CNN,0.92029
-beer,4,LSTM,0.931408
+beer,4,CNN,0.947368
+beer,4,LSTM,0.953405
 laundry_detergent,0,Unigram BoW + LogReg,0.985507
 laundry_detergent,0,Word 1-2-gram + LogReg,0.981818
 laundry_detergent,0,Word 1-3-gram + LogReg,0.981818
 laundry_detergent,0,Char n-gram(3-5) + LogReg,1
 laundry_detergent,0,BoW+MLP(256),0.98917
-laundry_detergent,0,CNN,0.959707
-laundry_detergent,0,LSTM,0.937269
+laundry_detergent,0,CNN,0.978102
+laundry_detergent,0,LSTM,0.962963
 laundry_detergent,1,Unigram BoW + LogReg,0.981818
 laundry_detergent,1,Word 1-2-gram + LogReg,0.981818
 laundry_detergent,1,Word 1-3-gram + LogReg,0.978102
 laundry_detergent,1,Char n-gram(3-5) + LogReg,1
 laundry_detergent,1,BoW+MLP(256),0.989247
-laundry_detergent,1,CNN,0.967273
-laundry_detergent,1,LSTM,0.953737
+laundry_detergent,1,CNN,0.985612
+laundry_detergent,1,LSTM,0.978571
 laundry_detergent,2,Unigram BoW + LogReg,0.992806
 laundry_detergent,2,Word 1-2-gram + LogReg,0.992806
 laundry_detergent,2,Word 1-3-gram + LogReg,0.992806
 laundry_detergent,2,Char n-gram(3-5) + LogReg,1
 laundry_detergent,2,BoW+MLP(256),0.989399
-laundry_detergent,2,CNN,0.967972
-laundry_detergent,2,LSTM,0.971223
+laundry_detergent,2,CNN,0.985714
+laundry_detergent,2,LSTM,0.978417
 laundry_detergent,3,Unigram BoW + LogReg,0.978102
 laundry_detergent,3,Word 1-2-gram + LogReg,0.96679
 laundry_detergent,3,Word 1-3-gram + LogReg,0.962963
 laundry_detergent,3,Char n-gram(3-5) + LogReg,1
 laundry_detergent,3,BoW+MLP(256),0.982206
-laundry_detergent,3,CNN,0.95203
-laundry_detergent,3,LSTM,0.963235
+laundry_detergent,3,CNN,0.981818
+laundry_detergent,3,LSTM,0.978261
 laundry_detergent,4,Unigram BoW + LogReg,0.98917
 laundry_detergent,4,Word 1-2-gram + LogReg,0.98917
 laundry_detergent,4,Word 1-3-gram + LogReg,0.985507
 laundry_detergent,4,Char n-gram(3-5) + LogReg,1
 laundry_detergent,4,BoW+MLP(256),0.992857
-laundry_detergent,4,CNN,0.947761
-laundry_detergent,4,LSTM,0.955882
+laundry_detergent,4,CNN,0.96679
+laundry_detergent,4,LSTM,0.967033
 fresh_apples,0,Unigram BoW + LogReg,0.981818
 fresh_apples,0,Word 1-2-gram + LogReg,0.981818
 fresh_apples,0,Word 1-3-gram + LogReg,0.981818
 fresh_apples,0,Char n-gram(3-5) + LogReg,1
 fresh_apples,0,BoW+MLP(256),0.989247
-fresh_apples,0,CNN,0.963768
-fresh_apples,0,LSTM,0.956522
+fresh_apples,0,CNN,0.970803
+fresh_apples,0,LSTM,0.963235
 fresh_apples,1,Unigram BoW + LogReg,0.962963
 fresh_apples,1,Word 1-2-gram + LogReg,0.962963
 fresh_apples,1,Word 1-3-gram + LogReg,0.959108
 fresh_apples,1,Char n-gram(3-5) + LogReg,1
 fresh_apples,1,BoW+MLP(256),0.985714
-fresh_apples,1,CNN,0.95941
-fresh_apples,1,LSTM,0.939502
+fresh_apples,1,CNN,0.967972
+fresh_apples,1,LSTM,0.947368
 fresh_apples,2,Unigram BoW + LogReg,0.992857
 fresh_apples,2,Word 1-2-gram + LogReg,0.992857
 fresh_apples,2,Word 1-3-gram + LogReg,0.992857
 fresh_apples,2,Char n-gram(3-5) + LogReg,1
 fresh_apples,2,BoW+MLP(256),0.982332
-fresh_apples,2,CNN,0.971831
-fresh_apples,2,LSTM,0.948805
+fresh_apples,2,CNN,0.968421
+fresh_apples,2,LSTM,0.952055
 fresh_apples,3,Unigram BoW + LogReg,0.985507
 fresh_apples,3,Word 1-2-gram + LogReg,0.985507
 fresh_apples,3,Word 1-3-gram + LogReg,0.985507
 fresh_apples,3,Char n-gram(3-5) + LogReg,1
 fresh_apples,3,BoW+MLP(256),0.982206
-fresh_apples,3,CNN,0.974729
-fresh_apples,3,LSTM,0.971223
+fresh_apples,3,CNN,0.985507
+fresh_apples,3,LSTM,0.978261
 fresh_apples,4,Unigram BoW + LogReg,0.985612
 fresh_apples,4,Word 1-2-gram + LogReg,0.98917
 fresh_apples,4,Word 1-3-gram + LogReg,0.98917
 fresh_apples,4,Char n-gram(3-5) + LogReg,1
 fresh_apples,4,BoW+MLP(256),0.992806
-fresh_apples,4,CNN,0.963235
-fresh_apples,4,LSTM,0.95941
+fresh_apples,4,CNN,0.974545
+fresh_apples,4,LSTM,0.974545

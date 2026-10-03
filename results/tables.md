@@ -2,48 +2,48 @@
 
 | Category | Model | Accuracy | F1 | Train (s) |
 |---|---|---|---|---|
-| granulated_sugar | Unigram BoW + LogReg | 0.965+/-0.010 | 0.958+/-0.012 | 0.01 |
-| granulated_sugar | Word 1-2-gram + LogReg | 0.962+/-0.012 | 0.955+/-0.014 | 0.02 |
-| granulated_sugar | Word 1-3-gram + LogReg | 0.959+/-0.012 | 0.951+/-0.014 | 0.02 |
+| granulated_sugar | Unigram BoW + LogReg | 0.965+/-0.010 | 0.958+/-0.012 | 0.02 |
+| granulated_sugar | Word 1-2-gram + LogReg | 0.962+/-0.012 | 0.955+/-0.014 | 0.03 |
+| granulated_sugar | Word 1-3-gram + LogReg | 0.959+/-0.012 | 0.951+/-0.014 | 0.03 |
 | granulated_sugar | Char n-gram(3-5) + LogReg | 0.996+/-0.002 | 0.996+/-0.003 | 0.05 |
-| granulated_sugar | BoW+MLP(256) | 0.982+/-0.009 | 0.979+/-0.010 | 0.83 |
-| granulated_sugar | CNN | 0.943+/-0.010 | 0.932+/-0.013 | 0.39 |
-| granulated_sugar | LSTM | 0.946+/-0.008 | 0.936+/-0.010 | 0.39 |
-| milk | Unigram BoW + LogReg | 0.960+/-0.015 | 0.951+/-0.019 | 0.01 |
-| milk | Word 1-2-gram + LogReg | 0.961+/-0.015 | 0.953+/-0.019 | 0.02 |
-| milk | Word 1-3-gram + LogReg | 0.959+/-0.014 | 0.951+/-0.017 | 0.02 |
-| milk | Char n-gram(3-5) + LogReg | 0.998+/-0.002 | 0.997+/-0.003 | 0.05 |
-| milk | BoW+MLP(256) | 0.969+/-0.007 | 0.964+/-0.008 | 0.97 |
-| milk | CNN | 0.959+/-0.009 | 0.950+/-0.012 | 0.23 |
-| milk | LSTM | 0.950+/-0.020 | 0.939+/-0.025 | 0.36 |
-| bread | Unigram BoW + LogReg | 0.965+/-0.014 | 0.958+/-0.016 | 0.01 |
-| bread | Word 1-2-gram + LogReg | 0.968+/-0.009 | 0.962+/-0.011 | 0.01 |
-| bread | Word 1-3-gram + LogReg | 0.966+/-0.009 | 0.960+/-0.011 | 0.02 |
-| bread | Char n-gram(3-5) + LogReg | 0.995+/-0.001 | 0.994+/-0.001 | 0.04 |
-| bread | BoW+MLP(256) | 0.977+/-0.008 | 0.973+/-0.009 | 0.94 |
-| bread | CNN | 0.939+/-0.010 | 0.927+/-0.013 | 0.23 |
-| bread | LSTM | 0.936+/-0.020 | 0.923+/-0.026 | 0.44 |
-| beer | Unigram BoW + LogReg | 0.967+/-0.011 | 0.961+/-0.013 | 0.01 |
-| beer | Word 1-2-gram + LogReg | 0.973+/-0.011 | 0.968+/-0.014 | 0.01 |
-| beer | Word 1-3-gram + LogReg | 0.970+/-0.011 | 0.964+/-0.013 | 0.02 |
-| beer | Char n-gram(3-5) + LogReg | 0.997+/-0.003 | 0.996+/-0.004 | 0.04 |
-| beer | BoW+MLP(256) | 0.975+/-0.008 | 0.971+/-0.009 | 0.96 |
-| beer | CNN | 0.951+/-0.010 | 0.941+/-0.012 | 0.24 |
-| beer | LSTM | 0.952+/-0.009 | 0.944+/-0.010 | 0.42 |
+| granulated_sugar | BoW+MLP(256) | 0.982+/-0.009 | 0.979+/-0.010 | 0.99 |
+| granulated_sugar | CNN | 0.961+/-0.015 | 0.953+/-0.018 | 2.19 |
+| granulated_sugar | LSTM | 0.959+/-0.015 | 0.950+/-0.018 | 2.41 |
+| milk | Unigram BoW + LogReg | 0.960+/-0.015 | 0.951+/-0.019 | 0.03 |
+| milk | Word 1-2-gram + LogReg | 0.961+/-0.015 | 0.953+/-0.019 | 0.03 |
+| milk | Word 1-3-gram + LogReg | 0.959+/-0.014 | 0.951+/-0.017 | 0.03 |
+| milk | Char n-gram(3-5) + LogReg | 0.998+/-0.002 | 0.997+/-0.003 | 0.06 |
+| milk | BoW+MLP(256) | 0.969+/-0.007 | 0.964+/-0.008 | 1.09 |
+| milk | CNN | 0.961+/-0.008 | 0.953+/-0.010 | 2.14 |
+| milk | LSTM | 0.961+/-0.009 | 0.953+/-0.010 | 2.97 |
+| bread | Unigram BoW + LogReg | 0.965+/-0.014 | 0.958+/-0.016 | 0.02 |
+| bread | Word 1-2-gram + LogReg | 0.968+/-0.009 | 0.962+/-0.011 | 0.02 |
+| bread | Word 1-3-gram + LogReg | 0.966+/-0.009 | 0.960+/-0.011 | 0.03 |
+| bread | Char n-gram(3-5) + LogReg | 0.995+/-0.001 | 0.994+/-0.001 | 0.06 |
+| bread | BoW+MLP(256) | 0.977+/-0.008 | 0.973+/-0.009 | 1.07 |
+| bread | CNN | 0.964+/-0.006 | 0.957+/-0.008 | 2.14 |
+| bread | LSTM | 0.958+/-0.008 | 0.950+/-0.011 | 2.65 |
+| beer | Unigram BoW + LogReg | 0.967+/-0.011 | 0.961+/-0.013 | 0.02 |
+| beer | Word 1-2-gram + LogReg | 0.973+/-0.011 | 0.968+/-0.014 | 0.02 |
+| beer | Word 1-3-gram + LogReg | 0.970+/-0.011 | 0.964+/-0.013 | 0.03 |
+| beer | Char n-gram(3-5) + LogReg | 0.997+/-0.003 | 0.996+/-0.004 | 0.07 |
+| beer | BoW+MLP(256) | 0.975+/-0.008 | 0.971+/-0.009 | 1.06 |
+| beer | CNN | 0.964+/-0.007 | 0.957+/-0.008 | 2.06 |
+| beer | LSTM | 0.962+/-0.004 | 0.955+/-0.005 | 2.57 |
 | laundry_detergent | Unigram BoW + LogReg | 0.988+/-0.004 | 0.985+/-0.005 | 0.02 |
 | laundry_detergent | Word 1-2-gram + LogReg | 0.985+/-0.007 | 0.982+/-0.009 | 0.02 |
-| laundry_detergent | Word 1-3-gram + LogReg | 0.984+/-0.008 | 0.980+/-0.010 | 0.02 |
-| laundry_detergent | Char n-gram(3-5) + LogReg | 1.000+/-0.000 | 1.000+/-0.000 | 0.04 |
-| laundry_detergent | BoW+MLP(256) | 0.990+/-0.003 | 0.989+/-0.003 | 0.84 |
-| laundry_detergent | CNN | 0.966+/-0.006 | 0.959+/-0.008 | 0.23 |
-| laundry_detergent | LSTM | 0.964+/-0.009 | 0.956+/-0.011 | 0.41 |
-| fresh_apples | Unigram BoW + LogReg | 0.985+/-0.008 | 0.982+/-0.010 | 0.01 |
-| fresh_apples | Word 1-2-gram + LogReg | 0.985+/-0.008 | 0.982+/-0.010 | 0.01 |
-| fresh_apples | Word 1-3-gram + LogReg | 0.985+/-0.010 | 0.982+/-0.012 | 0.02 |
-| fresh_apples | Char n-gram(3-5) + LogReg | 1.000+/-0.000 | 1.000+/-0.000 | 0.04 |
-| fresh_apples | BoW+MLP(256) | 0.988+/-0.004 | 0.986+/-0.004 | 0.83 |
-| fresh_apples | CNN | 0.972+/-0.004 | 0.967+/-0.006 | 0.24 |
-| fresh_apples | LSTM | 0.962+/-0.010 | 0.955+/-0.011 | 0.40 |
+| laundry_detergent | Word 1-3-gram + LogReg | 0.984+/-0.008 | 0.980+/-0.010 | 0.03 |
+| laundry_detergent | Char n-gram(3-5) + LogReg | 1.000+/-0.000 | 1.000+/-0.000 | 0.07 |
+| laundry_detergent | BoW+MLP(256) | 0.990+/-0.003 | 0.989+/-0.003 | 0.93 |
+| laundry_detergent | CNN | 0.983+/-0.006 | 0.980+/-0.007 | 1.84 |
+| laundry_detergent | LSTM | 0.978+/-0.005 | 0.973+/-0.007 | 2.22 |
+| fresh_apples | Unigram BoW + LogReg | 0.985+/-0.008 | 0.982+/-0.010 | 0.02 |
+| fresh_apples | Word 1-2-gram + LogReg | 0.985+/-0.008 | 0.982+/-0.010 | 0.02 |
+| fresh_apples | Word 1-3-gram + LogReg | 0.985+/-0.010 | 0.982+/-0.012 | 0.03 |
+| fresh_apples | Char n-gram(3-5) + LogReg | 1.000+/-0.000 | 1.000+/-0.000 | 0.05 |
+| fresh_apples | BoW+MLP(256) | 0.988+/-0.004 | 0.986+/-0.004 | 0.92 |
+| fresh_apples | CNN | 0.978+/-0.006 | 0.973+/-0.006 | 1.85 |
+| fresh_apples | LSTM | 0.968+/-0.011 | 0.963+/-0.012 | 2.34 |
 
 ### Matched BoW vs CNN/LSTM (mean F1 over categories)
 
@@ -54,8 +54,8 @@
 | Word 1-2-gram + LogReg | 0.967 |
 | Unigram BoW + LogReg | 0.966 |
 | Word 1-3-gram + LogReg | 0.965 |
-| CNN | 0.946 |
-| LSTM | 0.942 |
+| CNN | 0.962 |
+| LSTM | 0.957 |
 
 ### Trie coverage
 

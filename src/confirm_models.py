@@ -38,7 +38,12 @@ from sklearn.neural_network import MLPClassifier
 
 from make_synth import _categories
 
-warnings.filterwarnings("ignore")
+# Narrow, not blanket: a benchmark that silences every warning cannot report
+# that a model failed to converge. Only the noisy-but-harmless categories are
+# suppressed; ConvergenceWarning is left audible.
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
 
 SEEDS = [0, 1, 2, 3, 4]
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "synth"
@@ -146,6 +151,20 @@ if TORCH_OK:
             return self.fc(h[-1]).squeeze(1)
 
 
+# Stopping rule for the torch models. These are scikit-learn's own defaults for
+# MLPClassifier: iterate until the training loss fails to improve by more than
+# TOL for N_ITER_NO_CHANGE consecutive epochs, or until MAX_EPOCHS.
+#
+# An earlier version of this benchmark trained the CNN and LSTM for a fixed 8
+# epochs while every other model ran to its own convergence criterion. That is
+# not a matched protocol: at 40 epochs the CNN gained 1.6 F1 points and the
+# LSTM 1.5, enough to change the conclusion drawn from the comparison. The two
+# families now stop by the same rule, and the realised epoch count is reported.
+TORCH_MAX_EPOCHS = 200
+TORCH_TOL = 1e-4
+TORCH_N_ITER_NO_CHANGE = 10
+
+
 def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
     torch.manual_seed(seed)
     np.random.seed(seed)
@@ -159,8 +178,10 @@ def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
     loss_fn = nn.BCEWithLogitsLoss()
     model.train()
     bs = 128
-    for _epoch in range(8):
+    best_loss, no_improve, n_epochs = np.inf, 0, 0
+    for _epoch in range(TORCH_MAX_EPOCHS):
         perm = torch.randperm(len(Xtr))
+        total, nb = 0.0, 0
         for i in range(0, len(Xtr), bs):
             idx = perm[i:i + bs]
             opt.zero_grad()
@@ -168,11 +189,20 @@ def _fit_torch(kind: str, X_tr, y_tr, X_te, y_te, seed: int) -> dict:
             loss = loss_fn(out, ytr[idx])
             loss.backward()
             opt.step()
+            total += float(loss.detach())
+            nb += 1
+        n_epochs += 1
+        epoch_loss = total / max(nb, 1)
+        no_improve = no_improve + 1 if epoch_loss > best_loss - TORCH_TOL else 0
+        best_loss = min(best_loss, epoch_loss)
+        if no_improve >= TORCH_N_ITER_NO_CHANGE:
+            break
     model.eval()
     with torch.no_grad():
         pred = (torch.sigmoid(model(Xte)) > 0.5).long().numpy()
     m = _metrics(y_te, pred)
     m["train_s"] = time.time() - t0
+    m["n_epochs"] = n_epochs
     return m
 
 
@@ -190,6 +220,8 @@ TORCH_MODELS = ["CNN", "LSTM"]
 
 def _aggregate(per_seed: list[dict]) -> dict:
     keys = ["accuracy", "precision", "recall", "f1", "train_s"]
+    if "n_epochs" in per_seed[0]:
+        keys = keys + ["n_epochs"]
     out = {}
     for k in keys:
         vals = np.array([d[k] for d in per_seed])
@@ -225,7 +257,11 @@ def evaluate_all() -> pd.DataFrame:
     cols = ["category", "model", "accuracy_mean", "accuracy_sd",
             "precision_mean", "precision_sd", "recall_mean", "recall_sd",
             "f1_mean", "f1_sd", "train_s_mean", "train_s_sd"]
-    return pd.DataFrame(rows)[cols]
+    df = pd.DataFrame(rows)
+    # realised epoch count, so the stopping rule is auditable from the results
+    if "n_epochs_mean" in df.columns:
+        cols = cols + ["n_epochs_mean", "n_epochs_sd"]
+    return df[cols]
 
 
 def learning_curve() -> pd.DataFrame:
