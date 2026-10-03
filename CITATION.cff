@@ -17,7 +17,9 @@ abstract: >-
   computational cost benchmark (training time, inference throughput, model
   size, peak memory) and robustness checks covering the training budget, the
   decision threshold, the measurement batch size, and batch against online
-  label aggregation. Release 1.1.0 remains the version that reproduces the
+  label aggregation. Release 2.0.1 times the same training function the
+  accuracy results come from, which the cost benchmark of 2.0.0 did not.
+  Release 1.1.0 remains the version that reproduces the
   numbers of arXiv:2606.02004v3. Contains no proprietary or production data.
 type: software
 authors:
@@ -25,7 +27,7 @@ authors:
     family-names: Beskorovainyi
     orcid: "https://orcid.org/0009-0004-7005-6242"
     affiliation: "Besk Tech; Moscow Institute of Physics and Technology (MIPT)"
-version: "2.0.0"
+version: "2.0.1"
 date-released: "2026-10-03"
 doi: "10.5281/zenodo.20909562"
 license: MIT
