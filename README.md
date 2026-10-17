@@ -20,8 +20,13 @@ tracemalloc running; all numerical libraries are held to one thread), saves
 the output of every robustness check, adds the matched stopping rule as an arm
 of the training-budget check, runs the throughput-by-batch check on all six
 categories, and adds the pretrained-encoder baseline script with its outputs.
-The accuracy results (`confirm_metrics.csv`, `significance_*.csv`) are
-unchanged from release 2.0.1.
+It also adds sensitivity checks: a grade-token ablation that removes only the
+generator's grade block, a noise-sensitivity check over the generator's noise
+rate and kind, the final weights of the reliability-weighted rule, the
+aggregation comparison under two other annotator populations, and a table of
+every paired model comparison with its descriptive band. The accuracy results
+(`confirm_metrics.csv`, `significance_*.csv`) are unchanged from release
+2.0.1.
 
 ## Quick start
 
@@ -58,7 +63,13 @@ skipped** -- never silently dropped.
 | `src/cost_benchmark.py` | Computational cost of every confirmation model under the same matched protocol (Results, "Computational cost"; Appendix "Cost measurement"): training time, inference throughput with feature extraction included, serialized size, parameter count and peak heap allocation, for all 30 (category, seed) cells. Training is timed with tracemalloc off; peak memory comes from a second, identical, untimed fit. All measurement runs inside `threadpoolctl.threadpool_limits(1)` with OMP/MKL/OpenBLAS and torch (intra- and inter-op) held to one thread. Both families are warmed up once before any timing is taken, because the first call into a deep-learning framework in a process pays one-off initialisation unrelated to the model. Medians and standard deviations in `results/cost_benchmark_summary.csv`, per-cell figures in `results/cost_benchmark_per_run.csv`, and the measured environment, thread-pool state and measurement protocol in `results/cost_benchmark_env.json`. |
 | `src/robustness_checks.py` | Checks behind Appendix "Robustness of the model comparison", each saved per cell and as a summary: (A) convergence of all seven models against their iteration limits (`robustness_convergence*.csv`); (B) the deep models under a fixed 8-epoch budget, a fixed 40-epoch budget, the matched stopping rule of the main results and validation-split early stopping, each defined exactly in the script's docstring (`robustness_training_budget*.csv`); (C) the ranking under average precision as well as F1, with the deep models trained under the matched rule (`robustness_average_precision*.csv`); (D) unigram and character n-gram throughput at 330, 3,300, 33,000 and 330,000 items in all six categories (`throughput_by_batch*.csv`). |
 | `src/aggregation_passes.py` | Whether the Dawid-Skene advantage is an artefact of batch against online processing: the reliability-weighted rule re-run with 1, 2, 5 and 20 passes over the items (`results/aggregation_passes.csv`, per run in `aggregation_passes_per_run.csv`). Its ground truth is drawn i.i.d. rather than exactly balanced as in `consensus_sim.py`; see the script's docstring. |
-| `src/grade_token_ablation.py` | Shortcut check (Appendix "Robustness of the model comparison", grade-token ablation): removes every token equal to one of a category's grade words from training and test strings and re-runs the four logistic models and the MLP under the matched protocol. Writes `results/grade_token_ablation.csv`. |
+| `src/synth_variants.py` | In-memory variants of the synthetic corpus for the sensitivity checks: the generator's string assembly with per-token provenance (grade, brand, core, unit, filler), a configurable noise rate and a word-level-only noise kind. Never writes to `data/synth/`; asserts that its default variant reproduces the released corpus string for string. |
+| `src/grade_token_ablation.py` | Shortcut check (Appendix "Robustness of the model comparison", grade-token shortcut): regenerates the corpus in memory with the same draws and removes the grade block wherever it ended up after noise (own token, corrupted, or part of a concatenation), never touching key-phrase tokens such as "white sugar" or "whole milk"; re-runs the four logistic models and the MLP under the matched protocol. Writes `results/grade_token_ablation.csv`, `grade_token_ablation_summary.csv` and `grade_word_shares.csv` (share of positives with a grade word outside / anywhere including the key phrase). |
+| `src/noise_sensitivity.py` | Whether the ordering depends on the generator's noise: the six corpora regenerated in memory with noise rate 0.0, 0.3 (the released corpus, asserted identical) and 0.6, and with word-level noise only (token deletion or duplication instead of character edits); all seven models under the matched protocol. Writes `results/noise_sensitivity.csv`, `noise_sensitivity_summary.csv`, `noise_sensitivity_pairs.csv`. |
+| `src/consensus_weights.py` | Final weights of the reliability-weighted rule by annotator type and k, replaying `consensus_sim.py` exactly (accuracy asserted equal to `results/consensus.csv`). Writes `results/consensus_final_weights.csv` and the per-annotator file. |
+| `src/consensus_sensitivity.py` | The aggregation comparison with no adversarial annotators, and with class-dependent error rates (positives missed more often than false positives raised). Writes `results/consensus_sensitivity.csv` and `consensus_sensitivity_weights.csv`. |
+| `src/bands.py`, `src/pairwise_bands.py` | The descriptive bands used in the paper (share of non-tied cells won by the model with the higher mean: reliable >= 90%, small but consistent 70-90%, otherwise or with fewer than 10 non-tied cells indistinguishable) and the supplementary table of every model pair with wins/losses/ties, mean difference, Wilcoxon and Holm p (`results/pairwise_bands.csv`), plus the same for the aggregation-to-training comparison (`results/aggregation_to_training_pairs.csv`). |
+| `src/manuscript_numbers.py` | Derived figures quoted in the text (ranges, medians, differences) with their source files: `results/manuscript_numbers.csv`. |
 | `src/pretrained_baselines.py` | Pretrained-encoder baselines (Methods and Results, "Pretrained encoder baselines" / "Pretrained encoders"): DistilBERT fine-tuned under the matched stopping rule and for a fixed 3 epochs, and frozen MiniLM embeddings + logistic regression, under the same protocol. Needs `transformers` (optional, see `requirements.txt`) and in practice a GPU. Run from the repository it uses the checkout as is; run standalone (as on Kaggle) it clones release 2.0.1. Released outputs in `results/pretrained/`. |
 | `src/analyze_pretrained.py` | Paired wins/losses/ties of the pretrained baselines against the seven models over the 30 cells; writes `results/pretrained/pretrained_pairwise.csv`. |
 | `src/aggregation_to_training.py` | End-to-end link between labeling and modeling: training labels replaced by simulated crowd votes, aggregated by majority, the reliability-weighted rule and Dawid-Skene, then used to train the classifiers, scored on clean test labels. Summary in `results/aggregation_to_training_summary.csv`; per-cell figures in `results/aggregation_to_training.csv`. |
@@ -85,6 +96,9 @@ make cost        # computational cost of every model (timings; run on an idle ma
 make robust      # robustness checks: convergence, training budget, decision threshold,
                  # batch size, aggregation passes (per-cell and summary CSVs)
 make figures     # accuracy-cost figure from the committed results
+make sensitivity # grade-block ablation, noise sensitivity, final weights, annotator sensitivity
+make bands       # descriptive bands and table of every model pair
+make numbers     # derived figures quoted in the text
 make pretrained  # pretrained-encoder baselines (needs transformers; GPU advisable)
 make pretrained-analysis  # paired comparisons for the pretrained baselines
 make clean       # remove generated data/results/figures

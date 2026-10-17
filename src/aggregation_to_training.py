@@ -9,7 +9,7 @@ Protocol, per category x split seed (0..4) x votes-per-item k in {3,5,7}:
   2. replace the TRAINING labels with simulated crowd votes from the same
      mixed annotator population as consensus_sim.py (12 annotators: 40% expert,
      40% mediocre, 20% adversarial), k votes per item;
-  3. aggregate with majority vote, the reliability-weighted rule (Eq. 2) and
+  3. aggregate with majority vote, the reliability-weighted rule (Eqs. 2-3) and
      Dawid-Skene EM; also train on gold labels as an upper bound;
   4. train the unigram BoW and the character n-gram logistic regressions on
      each aggregated label set and score them on the CLEAN test labels.

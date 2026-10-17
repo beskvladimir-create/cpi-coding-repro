@@ -1,0 +1,85 @@
+variant,model_a,model_b,a_wins,b_wins,ties,mean_diff_points,leader,leader_share_non_tied,band
+char_0.0,Unigram BoW + LogReg,Word 1-2-gram + LogReg,0,0,30,0.0,Unigram BoW + LogReg,,identical
+char_0.0,Unigram BoW + LogReg,Word 1-3-gram + LogReg,0,0,30,0.0,Unigram BoW + LogReg,,identical
+char_0.0,Unigram BoW + LogReg,Char n-gram(3-5) + LogReg,0,0,30,0.0,Unigram BoW + LogReg,,identical
+char_0.0,Unigram BoW + LogReg,BoW+MLP(256),0,0,30,0.0,Unigram BoW + LogReg,,identical
+char_0.0,Unigram BoW + LogReg,CNN,0,0,30,0.0,Unigram BoW + LogReg,,identical
+char_0.0,Unigram BoW + LogReg,LSTM,0,0,30,0.0,Unigram BoW + LogReg,,identical
+char_0.0,Word 1-2-gram + LogReg,Word 1-3-gram + LogReg,0,0,30,0.0,Word 1-2-gram + LogReg,,identical
+char_0.0,Word 1-2-gram + LogReg,Char n-gram(3-5) + LogReg,0,0,30,0.0,Word 1-2-gram + LogReg,,identical
+char_0.0,Word 1-2-gram + LogReg,BoW+MLP(256),0,0,30,0.0,Word 1-2-gram + LogReg,,identical
+char_0.0,Word 1-2-gram + LogReg,CNN,0,0,30,0.0,Word 1-2-gram + LogReg,,identical
+char_0.0,Word 1-2-gram + LogReg,LSTM,0,0,30,0.0,Word 1-2-gram + LogReg,,identical
+char_0.0,Word 1-3-gram + LogReg,Char n-gram(3-5) + LogReg,0,0,30,0.0,Word 1-3-gram + LogReg,,identical
+char_0.0,Word 1-3-gram + LogReg,BoW+MLP(256),0,0,30,0.0,Word 1-3-gram + LogReg,,identical
+char_0.0,Word 1-3-gram + LogReg,CNN,0,0,30,0.0,Word 1-3-gram + LogReg,,identical
+char_0.0,Word 1-3-gram + LogReg,LSTM,0,0,30,0.0,Word 1-3-gram + LogReg,,identical
+char_0.0,Char n-gram(3-5) + LogReg,BoW+MLP(256),0,0,30,0.0,Char n-gram(3-5) + LogReg,,identical
+char_0.0,Char n-gram(3-5) + LogReg,CNN,0,0,30,0.0,Char n-gram(3-5) + LogReg,,identical
+char_0.0,Char n-gram(3-5) + LogReg,LSTM,0,0,30,0.0,Char n-gram(3-5) + LogReg,,identical
+char_0.0,BoW+MLP(256),CNN,0,0,30,0.0,BoW+MLP(256),,identical
+char_0.0,BoW+MLP(256),LSTM,0,0,30,0.0,BoW+MLP(256),,identical
+char_0.0,CNN,LSTM,0,0,30,0.0,CNN,,identical
+char_0.3,Unigram BoW + LogReg,Word 1-2-gram + LogReg,10,12,8,-0.10087481754395702,Word 1-2-gram + LogReg,0.5454545454545454,indistinguishable
+char_0.3,Unigram BoW + LogReg,Word 1-3-gram + LogReg,17,9,4,0.13823961839238433,Unigram BoW + LogReg,0.6538461538461539,indistinguishable
+char_0.3,Unigram BoW + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-3.108906914318004,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.3,Unigram BoW + LogReg,BoW+MLP(256),5,25,0,-1.080343946868076,BoW+MLP(256),0.8333333333333334,small but consistent
+char_0.3,Unigram BoW + LogReg,CNN,18,10,2,0.37610849146252345,Unigram BoW + LogReg,0.6428571428571429,indistinguishable
+char_0.3,Unigram BoW + LogReg,LSTM,19,11,0,0.8672814842626083,Unigram BoW + LogReg,0.6333333333333333,indistinguishable
+char_0.3,Word 1-2-gram + LogReg,Word 1-3-gram + LogReg,17,0,13,0.23911443593634135,Word 1-2-gram + LogReg,1.0,reliable
+char_0.3,Word 1-2-gram + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-3.008032096774047,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.3,Word 1-2-gram + LogReg,BoW+MLP(256),7,23,0,-0.9794691293241191,BoW+MLP(256),0.7666666666666667,small but consistent
+char_0.3,Word 1-2-gram + LogReg,CNN,17,12,1,0.4769833090064805,Word 1-2-gram + LogReg,0.5862068965517241,indistinguishable
+char_0.3,Word 1-2-gram + LogReg,LSTM,20,9,1,0.9681563018065654,Word 1-2-gram + LogReg,0.6896551724137931,indistinguishable
+char_0.3,Word 1-3-gram + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-3.2471465327103886,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.3,Word 1-3-gram + LogReg,BoW+MLP(256),5,25,0,-1.2185835652604604,BoW+MLP(256),0.8333333333333334,small but consistent
+char_0.3,Word 1-3-gram + LogReg,CNN,17,12,1,0.23786887307013913,Word 1-3-gram + LogReg,0.5862068965517241,indistinguishable
+char_0.3,Word 1-3-gram + LogReg,LSTM,18,11,1,0.7290418658702239,Word 1-3-gram + LogReg,0.6206896551724138,indistinguishable
+char_0.3,Char n-gram(3-5) + LogReg,BoW+MLP(256),30,0,0,2.0285629674499277,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.3,Char n-gram(3-5) + LogReg,CNN,30,0,0,3.4850154057805267,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.3,Char n-gram(3-5) + LogReg,LSTM,30,0,0,3.976188398580612,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.3,BoW+MLP(256),CNN,27,3,0,1.4564524383305995,BoW+MLP(256),0.9,reliable
+char_0.3,BoW+MLP(256),LSTM,28,2,0,1.9476254311306844,BoW+MLP(256),0.9333333333333333,reliable
+char_0.3,CNN,LSTM,21,8,1,0.4911729928000848,CNN,0.7241379310344828,small but consistent
+char_0.6,Unigram BoW + LogReg,Word 1-2-gram + LogReg,9,13,8,-0.1651613641035199,Word 1-2-gram + LogReg,0.5909090909090909,indistinguishable
+char_0.6,Unigram BoW + LogReg,Word 1-3-gram + LogReg,11,12,7,-0.07918115259021308,Word 1-3-gram + LogReg,0.5217391304347826,indistinguishable
+char_0.6,Unigram BoW + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-4.626471899116236,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.6,Unigram BoW + LogReg,BoW+MLP(256),0,30,0,-1.6336667845762844,BoW+MLP(256),1.0,reliable
+char_0.6,Unigram BoW + LogReg,CNN,16,14,0,0.34675782113946174,Unigram BoW + LogReg,0.5333333333333333,indistinguishable
+char_0.6,Unigram BoW + LogReg,LSTM,20,10,0,0.9996033955972643,Unigram BoW + LogReg,0.6666666666666666,indistinguishable
+char_0.6,Word 1-2-gram + LogReg,Word 1-3-gram + LogReg,8,4,18,0.08598021151330681,Word 1-2-gram + LogReg,0.6666666666666666,indistinguishable
+char_0.6,Word 1-2-gram + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-4.461310535012716,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.6,Word 1-2-gram + LogReg,BoW+MLP(256),2,28,0,-1.4685054204727648,BoW+MLP(256),0.9333333333333333,reliable
+char_0.6,Word 1-2-gram + LogReg,CNN,17,13,0,0.5119191852429816,Word 1-2-gram + LogReg,0.5666666666666667,indistinguishable
+char_0.6,Word 1-2-gram + LogReg,LSTM,22,8,0,1.1647647597007842,Word 1-2-gram + LogReg,0.7333333333333333,small but consistent
+char_0.6,Word 1-3-gram + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-4.547290746526023,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.6,Word 1-3-gram + LogReg,BoW+MLP(256),2,28,0,-1.5544856319860716,BoW+MLP(256),0.9333333333333333,reliable
+char_0.6,Word 1-3-gram + LogReg,CNN,15,15,0,0.4259389737296749,Word 1-3-gram + LogReg,0.5,indistinguishable
+char_0.6,Word 1-3-gram + LogReg,LSTM,21,8,1,1.0787845481874774,Word 1-3-gram + LogReg,0.7241379310344828,small but consistent
+char_0.6,Char n-gram(3-5) + LogReg,BoW+MLP(256),30,0,0,2.9928051145399515,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.6,Char n-gram(3-5) + LogReg,CNN,30,0,0,4.973229720255698,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.6,Char n-gram(3-5) + LogReg,LSTM,30,0,0,5.6260752947135,Char n-gram(3-5) + LogReg,1.0,reliable
+char_0.6,BoW+MLP(256),CNN,28,2,0,1.9804246057157464,BoW+MLP(256),0.9333333333333333,reliable
+char_0.6,BoW+MLP(256),LSTM,28,2,0,2.6332701801735485,BoW+MLP(256),0.9333333333333333,reliable
+char_0.6,CNN,LSTM,20,10,0,0.6528455744578024,CNN,0.6666666666666666,indistinguishable
+word_0.3,Unigram BoW + LogReg,Word 1-2-gram + LogReg,11,12,7,-0.008752296538269144,Word 1-2-gram + LogReg,0.5217391304347826,indistinguishable
+word_0.3,Unigram BoW + LogReg,Word 1-3-gram + LogReg,9,12,9,-0.07770067470091198,Word 1-3-gram + LogReg,0.5714285714285714,indistinguishable
+word_0.3,Unigram BoW + LogReg,Char n-gram(3-5) + LogReg,3,26,1,-0.5703498125771264,Char n-gram(3-5) + LogReg,0.896551724137931,small but consistent
+word_0.3,Unigram BoW + LogReg,BoW+MLP(256),17,13,0,0.22681841258284136,Unigram BoW + LogReg,0.5666666666666667,indistinguishable
+word_0.3,Unigram BoW + LogReg,CNN,19,10,1,0.458585994530342,Unigram BoW + LogReg,0.6551724137931034,indistinguishable
+word_0.3,Unigram BoW + LogReg,LSTM,20,9,1,0.46378811507856493,Unigram BoW + LogReg,0.6896551724137931,indistinguishable
+word_0.3,Word 1-2-gram + LogReg,Word 1-3-gram + LogReg,2,7,21,-0.06894837816264283,Word 1-3-gram + LogReg,0.7777777777777778,small but consistent
+word_0.3,Word 1-2-gram + LogReg,Char n-gram(3-5) + LogReg,3,27,0,-0.5615975160388572,Char n-gram(3-5) + LogReg,0.9,reliable
+word_0.3,Word 1-2-gram + LogReg,BoW+MLP(256),18,12,0,0.2355707091211105,Word 1-2-gram + LogReg,0.6,indistinguishable
+word_0.3,Word 1-2-gram + LogReg,CNN,18,9,3,0.4673382910686112,Word 1-2-gram + LogReg,0.6666666666666666,indistinguishable
+word_0.3,Word 1-2-gram + LogReg,LSTM,23,7,0,0.47254041161683413,Word 1-2-gram + LogReg,0.7666666666666667,small but consistent
+word_0.3,Word 1-3-gram + LogReg,Char n-gram(3-5) + LogReg,3,27,0,-0.4926491378762143,Char n-gram(3-5) + LogReg,0.9,reliable
+word_0.3,Word 1-3-gram + LogReg,BoW+MLP(256),19,10,1,0.3045190872837533,Word 1-3-gram + LogReg,0.6551724137931034,indistinguishable
+word_0.3,Word 1-3-gram + LogReg,CNN,19,9,2,0.536286669231254,Word 1-3-gram + LogReg,0.6785714285714286,indistinguishable
+word_0.3,Word 1-3-gram + LogReg,LSTM,23,7,0,0.541488789779477,Word 1-3-gram + LogReg,0.7666666666666667,small but consistent
+word_0.3,Char n-gram(3-5) + LogReg,BoW+MLP(256),25,4,1,0.7971682251599675,Char n-gram(3-5) + LogReg,0.8620689655172413,small but consistent
+word_0.3,Char n-gram(3-5) + LogReg,CNN,25,5,0,1.0289358071074683,Char n-gram(3-5) + LogReg,0.8333333333333334,small but consistent
+word_0.3,Char n-gram(3-5) + LogReg,LSTM,24,5,1,1.0341379276556912,Char n-gram(3-5) + LogReg,0.8275862068965517,small but consistent
+word_0.3,BoW+MLP(256),CNN,19,8,3,0.2317675819475007,BoW+MLP(256),0.7037037037037037,small but consistent
+word_0.3,BoW+MLP(256),LSTM,18,11,1,0.23696970249572363,BoW+MLP(256),0.6206896551724138,indistinguishable
+word_0.3,CNN,LSTM,13,15,2,0.005202120548222962,CNN,0.4642857142857143,indistinguishable

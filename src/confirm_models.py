@@ -1,4 +1,4 @@
-"""Per-category binary confirmation models (Section 5 / Table 'controlled').
+"""Per-category binary confirmation models (paper: Results, "Model comparison").
 
 One protocol for every model:
   * stratified 80/20 train/test split per seed (seeds 0..4);

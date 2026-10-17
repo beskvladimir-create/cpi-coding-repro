@@ -1,0 +1,301 @@
+category,seed,variant,model,f1
+granulated_sugar,0,original,Char n-gram(3-5) + LogReg,1.0
+granulated_sugar,0,original,BoW+MLP(256),0.9822064056939501
+granulated_sugar,0,original,Word 1-2-gram + LogReg,0.9705882352941176
+granulated_sugar,0,original,Unigram BoW + LogReg,0.9672727272727273
+granulated_sugar,0,original,Word 1-3-gram + LogReg,0.967032967032967
+granulated_sugar,1,original,Char n-gram(3-5) + LogReg,0.9928571428571429
+granulated_sugar,1,original,BoW+MLP(256),0.9611307420494699
+granulated_sugar,1,original,Word 1-2-gram + LogReg,0.9386281588447654
+granulated_sugar,1,original,Unigram BoW + LogReg,0.9458483754512635
+granulated_sugar,1,original,Word 1-3-gram + LogReg,0.935251798561151
+granulated_sugar,2,original,Char n-gram(3-5) + LogReg,0.9929078014184397
+granulated_sugar,2,original,BoW+MLP(256),0.9747292418772563
+granulated_sugar,2,original,Word 1-2-gram + LogReg,0.9363295880149812
+granulated_sugar,2,original,Unigram BoW + LogReg,0.9407407407407408
+granulated_sugar,2,original,Word 1-3-gram + LogReg,0.9328358208955224
+granulated_sugar,3,original,Char n-gram(3-5) + LogReg,0.99644128113879
+granulated_sugar,3,original,BoW+MLP(256),0.9858156028368794
+granulated_sugar,3,original,Word 1-2-gram + LogReg,0.9642857142857143
+granulated_sugar,3,original,Unigram BoW + LogReg,0.9679715302491103
+granulated_sugar,3,original,Word 1-3-gram + LogReg,0.9642857142857143
+granulated_sugar,4,original,Char n-gram(3-5) + LogReg,0.99644128113879
+granulated_sugar,4,original,BoW+MLP(256),0.9893992932862191
+granulated_sugar,4,original,Word 1-2-gram + LogReg,0.9642857142857143
+granulated_sugar,4,original,Unigram BoW + LogReg,0.967741935483871
+granulated_sugar,4,original,Word 1-3-gram + LogReg,0.9568345323741008
+granulated_sugar,0,grade block removed,Char n-gram(3-5) + LogReg,1.0
+granulated_sugar,0,grade block removed,BoW+MLP(256),0.9790209790209791
+granulated_sugar,0,grade block removed,Word 1-2-gram + LogReg,0.9611307420494699
+granulated_sugar,0,grade block removed,Unigram BoW + LogReg,0.9543859649122807
+granulated_sugar,0,grade block removed,Word 1-3-gram + LogReg,0.9614035087719298
+granulated_sugar,1,grade block removed,Char n-gram(3-5) + LogReg,0.9929078014184397
+granulated_sugar,1,grade block removed,BoW+MLP(256),0.9586206896551724
+granulated_sugar,1,grade block removed,Word 1-2-gram + LogReg,0.9540636042402827
+granulated_sugar,1,grade block removed,Unigram BoW + LogReg,0.951048951048951
+granulated_sugar,1,grade block removed,Word 1-3-gram + LogReg,0.9403508771929825
+granulated_sugar,2,grade block removed,Char n-gram(3-5) + LogReg,0.9929078014184397
+granulated_sugar,2,grade block removed,BoW+MLP(256),0.965034965034965
+granulated_sugar,2,grade block removed,Word 1-2-gram + LogReg,0.9446494464944649
+granulated_sugar,2,grade block removed,Unigram BoW + LogReg,0.9492753623188406
+granulated_sugar,2,grade block removed,Word 1-3-gram + LogReg,0.945054945054945
+granulated_sugar,3,grade block removed,Char n-gram(3-5) + LogReg,0.99644128113879
+granulated_sugar,3,grade block removed,BoW+MLP(256),0.9787234042553191
+granulated_sugar,3,grade block removed,Word 1-2-gram + LogReg,0.9496402877697842
+granulated_sugar,3,grade block removed,Unigram BoW + LogReg,0.953405017921147
+granulated_sugar,3,grade block removed,Word 1-3-gram + LogReg,0.9496402877697842
+granulated_sugar,4,grade block removed,Char n-gram(3-5) + LogReg,0.99644128113879
+granulated_sugar,4,grade block removed,BoW+MLP(256),0.968421052631579
+granulated_sugar,4,grade block removed,Word 1-2-gram + LogReg,0.9608540925266904
+granulated_sugar,4,grade block removed,Unigram BoW + LogReg,0.9642857142857143
+granulated_sugar,4,grade block removed,Word 1-3-gram + LogReg,0.953405017921147
+milk,0,original,Char n-gram(3-5) + LogReg,0.996415770609319
+milk,0,original,BoW+MLP(256),0.9605734767025089
+milk,0,original,Word 1-2-gram + LogReg,0.9323308270676691
+milk,0,original,Unigram BoW + LogReg,0.9242424242424242
+milk,0,original,Word 1-3-gram + LogReg,0.9323308270676691
+milk,1,original,Char n-gram(3-5) + LogReg,1.0
+milk,1,original,BoW+MLP(256),0.9784172661870504
+milk,1,original,Word 1-2-gram + LogReg,0.9710144927536232
+milk,1,original,Unigram BoW + LogReg,0.9708029197080292
+milk,1,original,Word 1-3-gram + LogReg,0.9672727272727273
+milk,2,original,Char n-gram(3-5) + LogReg,0.99644128113879
+milk,2,original,BoW+MLP(256),0.9619377162629758
+milk,2,original,Word 1-2-gram + LogReg,0.9507042253521126
+milk,2,original,Unigram BoW + LogReg,0.953405017921147
+milk,2,original,Word 1-3-gram + LogReg,0.9473684210526315
+milk,3,original,Char n-gram(3-5) + LogReg,0.9928571428571429
+milk,3,original,BoW+MLP(256),0.953405017921147
+milk,3,original,Word 1-2-gram + LogReg,0.9338235294117647
+milk,3,original,Unigram BoW + LogReg,0.9372693726937269
+milk,3,original,Word 1-3-gram + LogReg,0.9338235294117647
+milk,4,original,Char n-gram(3-5) + LogReg,1.0
+milk,4,original,BoW+MLP(256),0.965034965034965
+milk,4,original,Word 1-2-gram + LogReg,0.9785714285714285
+milk,4,original,Unigram BoW + LogReg,0.9714285714285714
+milk,4,original,Word 1-3-gram + LogReg,0.974910394265233
+milk,0,grade block removed,Char n-gram(3-5) + LogReg,1.0
+milk,0,grade block removed,BoW+MLP(256),0.958041958041958
+milk,0,grade block removed,Word 1-2-gram + LogReg,0.9323308270676691
+milk,0,grade block removed,Unigram BoW + LogReg,0.929368029739777
+milk,0,grade block removed,Word 1-3-gram + LogReg,0.9288389513108615
+milk,1,grade block removed,Char n-gram(3-5) + LogReg,1.0
+milk,1,grade block removed,BoW+MLP(256),0.965034965034965
+milk,1,grade block removed,Word 1-2-gram + LogReg,0.9562043795620438
+milk,1,grade block removed,Unigram BoW + LogReg,0.9605734767025089
+milk,1,grade block removed,Word 1-3-gram + LogReg,0.9527272727272728
+milk,2,grade block removed,Char n-gram(3-5) + LogReg,0.9893992932862191
+milk,2,grade block removed,BoW+MLP(256),0.9553264604810997
+milk,2,grade block removed,Word 1-2-gram + LogReg,0.9290780141843972
+milk,2,grade block removed,Unigram BoW + LogReg,0.9403508771929825
+milk,2,grade block removed,Word 1-3-gram + LogReg,0.9290780141843972
+milk,3,grade block removed,Char n-gram(3-5) + LogReg,0.99644128113879
+milk,3,grade block removed,BoW+MLP(256),0.9477351916376306
+milk,3,grade block removed,Word 1-2-gram + LogReg,0.9343065693430657
+milk,3,grade block removed,Unigram BoW + LogReg,0.9386281588447654
+milk,3,grade block removed,Word 1-3-gram + LogReg,0.9343065693430657
+milk,4,grade block removed,Char n-gram(3-5) + LogReg,1.0
+milk,4,grade block removed,BoW+MLP(256),0.9379310344827586
+milk,4,grade block removed,Word 1-2-gram + LogReg,0.95
+milk,4,grade block removed,Unigram BoW + LogReg,0.946236559139785
+milk,4,grade block removed,Word 1-3-gram + LogReg,0.95
+bread,0,original,Char n-gram(3-5) + LogReg,0.9929078014184397
+bread,0,original,BoW+MLP(256),0.9681978798586572
+bread,0,original,Word 1-2-gram + LogReg,0.9640287769784173
+bread,0,original,Unigram BoW + LogReg,0.9537366548042705
+bread,0,original,Word 1-3-gram + LogReg,0.9605734767025089
+bread,1,original,Char n-gram(3-5) + LogReg,0.9928571428571429
+bread,1,original,BoW+MLP(256),0.9893992932862191
+bread,1,original,Word 1-2-gram + LogReg,0.9785714285714285
+bread,1,original,Unigram BoW + LogReg,0.9858156028368794
+bread,1,original,Word 1-3-gram + LogReg,0.9785714285714285
+bread,2,original,Char n-gram(3-5) + LogReg,0.9929078014184397
+bread,2,original,BoW+MLP(256),0.9672727272727273
+bread,2,original,Word 1-2-gram + LogReg,0.9562043795620438
+bread,2,original,Unigram BoW + LogReg,0.9523809523809523
+bread,2,original,Word 1-3-gram + LogReg,0.9527272727272728
+bread,3,original,Char n-gram(3-5) + LogReg,0.99644128113879
+bread,3,original,BoW+MLP(256),0.9754385964912281
+bread,3,original,Word 1-2-gram + LogReg,0.9640287769784173
+bread,3,original,Unigram BoW + LogReg,0.9640287769784173
+bread,3,original,Word 1-3-gram + LogReg,0.9602888086642599
+bread,4,original,Char n-gram(3-5) + LogReg,0.9929078014184397
+bread,4,original,BoW+MLP(256),0.9647887323943662
+bread,4,original,Word 1-2-gram + LogReg,0.9466192170818505
+bread,4,original,Unigram BoW + LogReg,0.9361702127659575
+bread,4,original,Word 1-3-gram + LogReg,0.9466192170818505
+bread,0,grade block removed,Char n-gram(3-5) + LogReg,0.9787234042553191
+bread,0,grade block removed,BoW+MLP(256),0.9444444444444444
+bread,0,grade block removed,Word 1-2-gram + LogReg,0.9399293286219081
+bread,0,grade block removed,Unigram BoW + LogReg,0.9403508771929825
+bread,0,grade block removed,Word 1-3-gram + LogReg,0.9366197183098591
+bread,1,grade block removed,Char n-gram(3-5) + LogReg,0.99644128113879
+bread,1,grade block removed,BoW+MLP(256),0.965034965034965
+bread,1,grade block removed,Word 1-2-gram + LogReg,0.9605734767025089
+bread,1,grade block removed,Unigram BoW + LogReg,0.9681978798586572
+bread,1,grade block removed,Word 1-3-gram + LogReg,0.9605734767025089
+bread,2,grade block removed,Char n-gram(3-5) + LogReg,0.9893238434163701
+bread,2,grade block removed,BoW+MLP(256),0.968421052631579
+bread,2,grade block removed,Word 1-2-gram + LogReg,0.9377289377289377
+bread,2,grade block removed,Unigram BoW + LogReg,0.948905109489051
+bread,2,grade block removed,Word 1-3-gram + LogReg,0.9381818181818182
+bread,3,grade block removed,Char n-gram(3-5) + LogReg,0.99644128113879
+bread,3,grade block removed,BoW+MLP(256),0.951048951048951
+bread,3,grade block removed,Word 1-2-gram + LogReg,0.9428571428571428
+bread,3,grade block removed,Unigram BoW + LogReg,0.950354609929078
+bread,3,grade block removed,Word 1-3-gram + LogReg,0.9428571428571428
+bread,4,grade block removed,Char n-gram(3-5) + LogReg,0.9859154929577465
+bread,4,grade block removed,BoW+MLP(256),0.9480968858131488
+bread,4,grade block removed,Word 1-2-gram + LogReg,0.9290780141843972
+bread,4,grade block removed,Unigram BoW + LogReg,0.9295774647887324
+bread,4,grade block removed,Word 1-3-gram + LogReg,0.9290780141843972
+beer,0,original,Char n-gram(3-5) + LogReg,1.0
+beer,0,original,BoW+MLP(256),0.9823321554770318
+beer,0,original,Word 1-2-gram + LogReg,0.9558823529411765
+beer,0,original,Unigram BoW + LogReg,0.9565217391304348
+beer,0,original,Word 1-3-gram + LogReg,0.9558823529411765
+beer,1,original,Char n-gram(3-5) + LogReg,0.99644128113879
+beer,1,original,BoW+MLP(256),0.971830985915493
+beer,1,original,Word 1-2-gram + LogReg,0.9857142857142858
+beer,1,original,Unigram BoW + LogReg,0.9752650176678446
+beer,1,original,Word 1-3-gram + LogReg,0.982078853046595
+beer,2,original,Char n-gram(3-5) + LogReg,0.99644128113879
+beer,2,original,BoW+MLP(256),0.958041958041958
+beer,2,original,Word 1-2-gram + LogReg,0.9605734767025089
+beer,2,original,Unigram BoW + LogReg,0.9466192170818505
+beer,2,original,Word 1-3-gram + LogReg,0.950354609929078
+beer,3,original,Char n-gram(3-5) + LogReg,1.0
+beer,3,original,BoW+MLP(256),0.9790209790209791
+beer,3,original,Word 1-2-gram + LogReg,0.9819494584837545
+beer,3,original,Unigram BoW + LogReg,0.9785714285714285
+beer,3,original,Word 1-3-gram + LogReg,0.9784172661870504
+beer,4,original,Char n-gram(3-5) + LogReg,0.9893992932862191
+beer,4,original,BoW+MLP(256),0.9619377162629758
+beer,4,original,Word 1-2-gram + LogReg,0.953405017921147
+beer,4,original,Unigram BoW + LogReg,0.95
+beer,4,original,Word 1-3-gram + LogReg,0.953405017921147
+beer,0,grade block removed,Char n-gram(3-5) + LogReg,1.0
+beer,0,grade block removed,BoW+MLP(256),0.9787234042553191
+beer,0,grade block removed,Word 1-2-gram + LogReg,0.9577464788732394
+beer,0,grade block removed,Unigram BoW + LogReg,0.9642857142857143
+beer,0,grade block removed,Word 1-3-gram + LogReg,0.9577464788732394
+beer,1,grade block removed,Char n-gram(3-5) + LogReg,0.9893992932862191
+beer,1,grade block removed,BoW+MLP(256),0.9688581314878892
+beer,1,grade block removed,Word 1-2-gram + LogReg,0.9655172413793104
+beer,1,grade block removed,Unigram BoW + LogReg,0.9553264604810997
+beer,1,grade block removed,Word 1-3-gram + LogReg,0.9556313993174061
+beer,2,grade block removed,Char n-gram(3-5) + LogReg,0.99644128113879
+beer,2,grade block removed,BoW+MLP(256),0.9616724738675958
+beer,2,grade block removed,Word 1-2-gram + LogReg,0.9444444444444444
+beer,2,grade block removed,Unigram BoW + LogReg,0.9484536082474226
+beer,2,grade block removed,Word 1-3-gram + LogReg,0.9448275862068966
+beer,3,grade block removed,Char n-gram(3-5) + LogReg,0.9929078014184397
+beer,3,grade block removed,BoW+MLP(256),0.9754385964912281
+beer,3,grade block removed,Word 1-2-gram + LogReg,0.958041958041958
+beer,3,grade block removed,Unigram BoW + LogReg,0.9547038327526133
+beer,3,grade block removed,Word 1-3-gram + LogReg,0.9547038327526133
+beer,4,grade block removed,Char n-gram(3-5) + LogReg,0.9859154929577465
+beer,4,grade block removed,BoW+MLP(256),0.9517241379310345
+beer,4,grade block removed,Word 1-2-gram + LogReg,0.9407665505226481
+beer,4,grade block removed,Unigram BoW + LogReg,0.951048951048951
+beer,4,grade block removed,Word 1-3-gram + LogReg,0.9375
+laundry_detergent,0,original,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,0,original,BoW+MLP(256),0.9891696750902527
+laundry_detergent,0,original,Word 1-2-gram + LogReg,0.9818181818181818
+laundry_detergent,0,original,Unigram BoW + LogReg,0.9855072463768116
+laundry_detergent,0,original,Word 1-3-gram + LogReg,0.9818181818181818
+laundry_detergent,1,original,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,1,original,BoW+MLP(256),0.989247311827957
+laundry_detergent,1,original,Word 1-2-gram + LogReg,0.9818181818181818
+laundry_detergent,1,original,Unigram BoW + LogReg,0.9818181818181818
+laundry_detergent,1,original,Word 1-3-gram + LogReg,0.9781021897810219
+laundry_detergent,2,original,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,2,original,BoW+MLP(256),0.9893992932862191
+laundry_detergent,2,original,Word 1-2-gram + LogReg,0.9928057553956835
+laundry_detergent,2,original,Unigram BoW + LogReg,0.9928057553956835
+laundry_detergent,2,original,Word 1-3-gram + LogReg,0.9928057553956835
+laundry_detergent,3,original,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,3,original,BoW+MLP(256),0.9822064056939501
+laundry_detergent,3,original,Word 1-2-gram + LogReg,0.966789667896679
+laundry_detergent,3,original,Unigram BoW + LogReg,0.9781021897810219
+laundry_detergent,3,original,Word 1-3-gram + LogReg,0.9629629629629629
+laundry_detergent,4,original,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,4,original,BoW+MLP(256),0.9928571428571429
+laundry_detergent,4,original,Word 1-2-gram + LogReg,0.9891696750902527
+laundry_detergent,4,original,Unigram BoW + LogReg,0.9891696750902527
+laundry_detergent,4,original,Word 1-3-gram + LogReg,0.9855072463768116
+laundry_detergent,0,grade block removed,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,0,grade block removed,BoW+MLP(256),0.9856115107913669
+laundry_detergent,0,grade block removed,Word 1-2-gram + LogReg,0.9705882352941176
+laundry_detergent,0,grade block removed,Unigram BoW + LogReg,0.9629629629629629
+laundry_detergent,0,grade block removed,Word 1-3-gram + LogReg,0.9705882352941176
+laundry_detergent,1,grade block removed,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,1,grade block removed,BoW+MLP(256),0.9672727272727273
+laundry_detergent,1,grade block removed,Word 1-2-gram + LogReg,0.9398496240601504
+laundry_detergent,1,grade block removed,Unigram BoW + LogReg,0.9555555555555556
+laundry_detergent,1,grade block removed,Word 1-3-gram + LogReg,0.9398496240601504
+laundry_detergent,2,grade block removed,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,2,grade block removed,BoW+MLP(256),0.9787234042553191
+laundry_detergent,2,grade block removed,Word 1-2-gram + LogReg,0.9891696750902527
+laundry_detergent,2,grade block removed,Unigram BoW + LogReg,0.9891696750902527
+laundry_detergent,2,grade block removed,Word 1-3-gram + LogReg,0.9891696750902527
+laundry_detergent,3,grade block removed,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,3,grade block removed,BoW+MLP(256),0.9750889679715302
+laundry_detergent,3,grade block removed,Word 1-2-gram + LogReg,0.959409594095941
+laundry_detergent,3,grade block removed,Unigram BoW + LogReg,0.966789667896679
+laundry_detergent,3,grade block removed,Word 1-3-gram + LogReg,0.9555555555555556
+laundry_detergent,4,grade block removed,Char n-gram(3-5) + LogReg,1.0
+laundry_detergent,4,grade block removed,BoW+MLP(256),0.9822064056939501
+laundry_detergent,4,grade block removed,Word 1-2-gram + LogReg,0.967032967032967
+laundry_detergent,4,grade block removed,Unigram BoW + LogReg,0.9710144927536232
+laundry_detergent,4,grade block removed,Word 1-3-gram + LogReg,0.967032967032967
+fresh_apples,0,original,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,0,original,BoW+MLP(256),0.989247311827957
+fresh_apples,0,original,Word 1-2-gram + LogReg,0.9818181818181818
+fresh_apples,0,original,Unigram BoW + LogReg,0.9818181818181818
+fresh_apples,0,original,Word 1-3-gram + LogReg,0.9818181818181818
+fresh_apples,1,original,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,1,original,BoW+MLP(256),0.9857142857142858
+fresh_apples,1,original,Word 1-2-gram + LogReg,0.9629629629629629
+fresh_apples,1,original,Unigram BoW + LogReg,0.9629629629629629
+fresh_apples,1,original,Word 1-3-gram + LogReg,0.9591078066914498
+fresh_apples,2,original,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,2,original,BoW+MLP(256),0.9823321554770318
+fresh_apples,2,original,Word 1-2-gram + LogReg,0.9928571428571429
+fresh_apples,2,original,Unigram BoW + LogReg,0.9928571428571429
+fresh_apples,2,original,Word 1-3-gram + LogReg,0.9928571428571429
+fresh_apples,3,original,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,3,original,BoW+MLP(256),0.9822064056939501
+fresh_apples,3,original,Word 1-2-gram + LogReg,0.9855072463768116
+fresh_apples,3,original,Unigram BoW + LogReg,0.9855072463768116
+fresh_apples,3,original,Word 1-3-gram + LogReg,0.9855072463768116
+fresh_apples,4,original,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,4,original,BoW+MLP(256),0.9928057553956835
+fresh_apples,4,original,Word 1-2-gram + LogReg,0.9891696750902527
+fresh_apples,4,original,Unigram BoW + LogReg,0.9856115107913669
+fresh_apples,4,original,Word 1-3-gram + LogReg,0.9891696750902527
+fresh_apples,0,grade block removed,Char n-gram(3-5) + LogReg,0.9928057553956835
+fresh_apples,0,grade block removed,BoW+MLP(256),0.9819494584837545
+fresh_apples,0,grade block removed,Word 1-2-gram + LogReg,0.966789667896679
+fresh_apples,0,grade block removed,Unigram BoW + LogReg,0.9705882352941176
+fresh_apples,0,grade block removed,Word 1-3-gram + LogReg,0.9562043795620438
+fresh_apples,1,grade block removed,Char n-gram(3-5) + LogReg,0.9928571428571429
+fresh_apples,1,grade block removed,BoW+MLP(256),0.9754385964912281
+fresh_apples,1,grade block removed,Word 1-2-gram + LogReg,0.9562043795620438
+fresh_apples,1,grade block removed,Unigram BoW + LogReg,0.9527272727272728
+fresh_apples,1,grade block removed,Word 1-3-gram + LogReg,0.9530685920577617
+fresh_apples,2,grade block removed,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,2,grade block removed,BoW+MLP(256),0.972027972027972
+fresh_apples,2,grade block removed,Word 1-2-gram + LogReg,0.9714285714285714
+fresh_apples,2,grade block removed,Unigram BoW + LogReg,0.974910394265233
+fresh_apples,2,grade block removed,Word 1-3-gram + LogReg,0.9714285714285714
+fresh_apples,3,grade block removed,Char n-gram(3-5) + LogReg,1.0
+fresh_apples,3,grade block removed,BoW+MLP(256),0.9823321554770318
+fresh_apples,3,grade block removed,Word 1-2-gram + LogReg,0.9785714285714285
+fresh_apples,3,grade block removed,Unigram BoW + LogReg,0.974910394265233
+fresh_apples,3,grade block removed,Word 1-3-gram + LogReg,0.9858156028368794
+fresh_apples,4,grade block removed,Char n-gram(3-5) + LogReg,0.9928571428571429
+fresh_apples,4,grade block removed,BoW+MLP(256),0.9819494584837545
+fresh_apples,4,grade block removed,Word 1-2-gram + LogReg,0.9597069597069597
+fresh_apples,4,grade block removed,Unigram BoW + LogReg,0.9597069597069597
+fresh_apples,4,grade block removed,Word 1-3-gram + LogReg,0.9597069597069597

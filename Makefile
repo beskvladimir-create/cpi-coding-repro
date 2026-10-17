@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data trie confirm consensus audit cost robust figures pretrained pretrained-analysis clean
+.PHONY: all data trie confirm consensus audit cost robust sensitivity grade-ablation noise bands numbers figures pretrained pretrained-analysis clean
 
 all:
 	$(PY) src/run_all.py
@@ -25,6 +25,29 @@ cost: data
 
 robust: data
 	cd src && $(PY) robustness_checks.py && $(PY) aggregation_passes.py
+
+# sensitivity checks of round 2: grade-block ablation, generator noise,
+# final reliability weights, annotator-population sensitivity. The corpus
+# variants are generated in memory; data/synth is never rewritten. Run one at
+# a time (noise_sensitivity.py takes about 15 minutes on one core).
+sensitivity: data
+	cd src && $(PY) grade_token_ablation.py && $(PY) noise_sensitivity.py \
+	  && $(PY) consensus_weights.py && $(PY) consensus_sensitivity.py
+
+grade-ablation: data
+	cd src && $(PY) grade_token_ablation.py
+
+noise: data
+	cd src && $(PY) noise_sensitivity.py
+
+# descriptive bands and supplementary table of every model pair, from the
+# released pairwise results (needs `audit` and `pretrained-analysis` outputs)
+bands:
+	cd src && $(PY) pairwise_bands.py
+
+# derived figures quoted in the text (ranges, medians, differences)
+numbers:
+	cd src && $(PY) manuscript_numbers.py
 
 # accuracy-cost figure from results/confirm_metrics.csv + cost_benchmark_summary.csv
 figures:

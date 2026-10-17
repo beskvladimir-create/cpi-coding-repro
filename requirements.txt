@@ -19,4 +19,4 @@ torch==2.5.1
 # Optional, only for src/pretrained_baselines.py (pretrained-encoder baselines;
 # a GPU is advisable). The released pretrained results were run with
 # transformers 5.16.1 and torch 2.11.0 on Kaggle:
-# transformers==4.46.3
+# transformers==5.16.1

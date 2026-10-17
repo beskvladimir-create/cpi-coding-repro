@@ -1,0 +1,211 @@
+category,seed,model,n_iter,max_iter,hit_cap,converged
+granulated_sugar,0,Unigram BoW + LogReg,13,1000,False,True
+granulated_sugar,0,Word 1-2-gram + LogReg,14,1000,False,True
+granulated_sugar,0,Word 1-3-gram + LogReg,14,1000,False,True
+granulated_sugar,0,Char n-gram(3-5) + LogReg,15,1000,False,True
+granulated_sugar,0,BoW+MLP(256),69,80,False,True
+granulated_sugar,0,CNN,55,200,False,True
+granulated_sugar,0,LSTM,41,200,False,True
+granulated_sugar,1,Unigram BoW + LogReg,13,1000,False,True
+granulated_sugar,1,Word 1-2-gram + LogReg,14,1000,False,True
+granulated_sugar,1,Word 1-3-gram + LogReg,13,1000,False,True
+granulated_sugar,1,Char n-gram(3-5) + LogReg,15,1000,False,True
+granulated_sugar,1,BoW+MLP(256),71,80,False,True
+granulated_sugar,1,CNN,52,200,False,True
+granulated_sugar,1,LSTM,39,200,False,True
+granulated_sugar,2,Unigram BoW + LogReg,13,1000,False,True
+granulated_sugar,2,Word 1-2-gram + LogReg,13,1000,False,True
+granulated_sugar,2,Word 1-3-gram + LogReg,13,1000,False,True
+granulated_sugar,2,Char n-gram(3-5) + LogReg,15,1000,False,True
+granulated_sugar,2,BoW+MLP(256),70,80,False,True
+granulated_sugar,2,CNN,50,200,False,True
+granulated_sugar,2,LSTM,32,200,False,True
+granulated_sugar,3,Unigram BoW + LogReg,13,1000,False,True
+granulated_sugar,3,Word 1-2-gram + LogReg,16,1000,False,True
+granulated_sugar,3,Word 1-3-gram + LogReg,13,1000,False,True
+granulated_sugar,3,Char n-gram(3-5) + LogReg,15,1000,False,True
+granulated_sugar,3,BoW+MLP(256),71,80,False,True
+granulated_sugar,3,CNN,56,200,False,True
+granulated_sugar,3,LSTM,33,200,False,True
+granulated_sugar,4,Unigram BoW + LogReg,14,1000,False,True
+granulated_sugar,4,Word 1-2-gram + LogReg,14,1000,False,True
+granulated_sugar,4,Word 1-3-gram + LogReg,13,1000,False,True
+granulated_sugar,4,Char n-gram(3-5) + LogReg,16,1000,False,True
+granulated_sugar,4,BoW+MLP(256),74,80,False,True
+granulated_sugar,4,CNN,56,200,False,True
+granulated_sugar,4,LSTM,33,200,False,True
+milk,0,Unigram BoW + LogReg,15,1000,False,True
+milk,0,Word 1-2-gram + LogReg,17,1000,False,True
+milk,0,Word 1-3-gram + LogReg,16,1000,False,True
+milk,0,Char n-gram(3-5) + LogReg,18,1000,False,True
+milk,0,BoW+MLP(256),78,80,False,True
+milk,0,CNN,60,200,False,True
+milk,0,LSTM,44,200,False,True
+milk,1,Unigram BoW + LogReg,12,1000,False,True
+milk,1,Word 1-2-gram + LogReg,16,1000,False,True
+milk,1,Word 1-3-gram + LogReg,19,1000,False,True
+milk,1,Char n-gram(3-5) + LogReg,22,1000,False,True
+milk,1,BoW+MLP(256),77,80,False,True
+milk,1,CNN,58,200,False,True
+milk,1,LSTM,31,200,False,True
+milk,2,Unigram BoW + LogReg,12,1000,False,True
+milk,2,Word 1-2-gram + LogReg,16,1000,False,True
+milk,2,Word 1-3-gram + LogReg,16,1000,False,True
+milk,2,Char n-gram(3-5) + LogReg,19,1000,False,True
+milk,2,BoW+MLP(256),76,80,False,True
+milk,2,CNN,55,200,False,True
+milk,2,LSTM,49,200,False,True
+milk,3,Unigram BoW + LogReg,12,1000,False,True
+milk,3,Word 1-2-gram + LogReg,17,1000,False,True
+milk,3,Word 1-3-gram + LogReg,17,1000,False,True
+milk,3,Char n-gram(3-5) + LogReg,18,1000,False,True
+milk,3,BoW+MLP(256),78,80,False,True
+milk,3,CNN,60,200,False,True
+milk,3,LSTM,60,200,False,True
+milk,4,Unigram BoW + LogReg,14,1000,False,True
+milk,4,Word 1-2-gram + LogReg,17,1000,False,True
+milk,4,Word 1-3-gram + LogReg,16,1000,False,True
+milk,4,Char n-gram(3-5) + LogReg,20,1000,False,True
+milk,4,BoW+MLP(256),77,80,False,True
+milk,4,CNN,56,200,False,True
+milk,4,LSTM,38,200,False,True
+bread,0,Unigram BoW + LogReg,16,1000,False,True
+bread,0,Word 1-2-gram + LogReg,15,1000,False,True
+bread,0,Word 1-3-gram + LogReg,16,1000,False,True
+bread,0,Char n-gram(3-5) + LogReg,18,1000,False,True
+bread,0,BoW+MLP(256),73,80,False,True
+bread,0,CNN,55,200,False,True
+bread,0,LSTM,35,200,False,True
+bread,1,Unigram BoW + LogReg,19,1000,False,True
+bread,1,Word 1-2-gram + LogReg,14,1000,False,True
+bread,1,Word 1-3-gram + LogReg,15,1000,False,True
+bread,1,Char n-gram(3-5) + LogReg,18,1000,False,True
+bread,1,BoW+MLP(256),75,80,False,True
+bread,1,CNN,56,200,False,True
+bread,1,LSTM,39,200,False,True
+bread,2,Unigram BoW + LogReg,16,1000,False,True
+bread,2,Word 1-2-gram + LogReg,15,1000,False,True
+bread,2,Word 1-3-gram + LogReg,16,1000,False,True
+bread,2,Char n-gram(3-5) + LogReg,17,1000,False,True
+bread,2,BoW+MLP(256),74,80,False,True
+bread,2,CNN,52,200,False,True
+bread,2,LSTM,52,200,False,True
+bread,3,Unigram BoW + LogReg,17,1000,False,True
+bread,3,Word 1-2-gram + LogReg,16,1000,False,True
+bread,3,Word 1-3-gram + LogReg,15,1000,False,True
+bread,3,Char n-gram(3-5) + LogReg,18,1000,False,True
+bread,3,BoW+MLP(256),78,80,False,True
+bread,3,CNN,57,200,False,True
+bread,3,LSTM,34,200,False,True
+bread,4,Unigram BoW + LogReg,16,1000,False,True
+bread,4,Word 1-2-gram + LogReg,15,1000,False,True
+bread,4,Word 1-3-gram + LogReg,17,1000,False,True
+bread,4,Char n-gram(3-5) + LogReg,20,1000,False,True
+bread,4,BoW+MLP(256),73,80,False,True
+bread,4,CNN,62,200,False,True
+bread,4,LSTM,38,200,False,True
+beer,0,Unigram BoW + LogReg,14,1000,False,True
+beer,0,Word 1-2-gram + LogReg,17,1000,False,True
+beer,0,Word 1-3-gram + LogReg,16,1000,False,True
+beer,0,Char n-gram(3-5) + LogReg,26,1000,False,True
+beer,0,BoW+MLP(256),77,80,False,True
+beer,0,CNN,52,200,False,True
+beer,0,LSTM,42,200,False,True
+beer,1,Unigram BoW + LogReg,15,1000,False,True
+beer,1,Word 1-2-gram + LogReg,16,1000,False,True
+beer,1,Word 1-3-gram + LogReg,16,1000,False,True
+beer,1,Char n-gram(3-5) + LogReg,24,1000,False,True
+beer,1,BoW+MLP(256),77,80,False,True
+beer,1,CNN,56,200,False,True
+beer,1,LSTM,32,200,False,True
+beer,2,Unigram BoW + LogReg,14,1000,False,True
+beer,2,Word 1-2-gram + LogReg,14,1000,False,True
+beer,2,Word 1-3-gram + LogReg,15,1000,False,True
+beer,2,Char n-gram(3-5) + LogReg,27,1000,False,True
+beer,2,BoW+MLP(256),76,80,False,True
+beer,2,CNN,57,200,False,True
+beer,2,LSTM,35,200,False,True
+beer,3,Unigram BoW + LogReg,17,1000,False,True
+beer,3,Word 1-2-gram + LogReg,15,1000,False,True
+beer,3,Word 1-3-gram + LogReg,16,1000,False,True
+beer,3,Char n-gram(3-5) + LogReg,26,1000,False,True
+beer,3,BoW+MLP(256),75,80,False,True
+beer,3,CNN,53,200,False,True
+beer,3,LSTM,45,200,False,True
+beer,4,Unigram BoW + LogReg,17,1000,False,True
+beer,4,Word 1-2-gram + LogReg,14,1000,False,True
+beer,4,Word 1-3-gram + LogReg,16,1000,False,True
+beer,4,Char n-gram(3-5) + LogReg,25,1000,False,True
+beer,4,BoW+MLP(256),75,80,False,True
+beer,4,CNN,55,200,False,True
+beer,4,LSTM,37,200,False,True
+laundry_detergent,0,Unigram BoW + LogReg,12,1000,False,True
+laundry_detergent,0,Word 1-2-gram + LogReg,12,1000,False,True
+laundry_detergent,0,Word 1-3-gram + LogReg,12,1000,False,True
+laundry_detergent,0,Char n-gram(3-5) + LogReg,14,1000,False,True
+laundry_detergent,0,BoW+MLP(256),60,80,False,True
+laundry_detergent,0,CNN,52,200,False,True
+laundry_detergent,0,LSTM,41,200,False,True
+laundry_detergent,1,Unigram BoW + LogReg,16,1000,False,True
+laundry_detergent,1,Word 1-2-gram + LogReg,12,1000,False,True
+laundry_detergent,1,Word 1-3-gram + LogReg,12,1000,False,True
+laundry_detergent,1,Char n-gram(3-5) + LogReg,16,1000,False,True
+laundry_detergent,1,BoW+MLP(256),58,80,False,True
+laundry_detergent,1,CNN,50,200,False,True
+laundry_detergent,1,LSTM,30,200,False,True
+laundry_detergent,2,Unigram BoW + LogReg,13,1000,False,True
+laundry_detergent,2,Word 1-2-gram + LogReg,12,1000,False,True
+laundry_detergent,2,Word 1-3-gram + LogReg,12,1000,False,True
+laundry_detergent,2,Char n-gram(3-5) + LogReg,14,1000,False,True
+laundry_detergent,2,BoW+MLP(256),59,80,False,True
+laundry_detergent,2,CNN,50,200,False,True
+laundry_detergent,2,LSTM,28,200,False,True
+laundry_detergent,3,Unigram BoW + LogReg,16,1000,False,True
+laundry_detergent,3,Word 1-2-gram + LogReg,12,1000,False,True
+laundry_detergent,3,Word 1-3-gram + LogReg,12,1000,False,True
+laundry_detergent,3,Char n-gram(3-5) + LogReg,15,1000,False,True
+laundry_detergent,3,BoW+MLP(256),59,80,False,True
+laundry_detergent,3,CNN,46,200,False,True
+laundry_detergent,3,LSTM,41,200,False,True
+laundry_detergent,4,Unigram BoW + LogReg,15,1000,False,True
+laundry_detergent,4,Word 1-2-gram + LogReg,12,1000,False,True
+laundry_detergent,4,Word 1-3-gram + LogReg,12,1000,False,True
+laundry_detergent,4,Char n-gram(3-5) + LogReg,16,1000,False,True
+laundry_detergent,4,BoW+MLP(256),58,80,False,True
+laundry_detergent,4,CNN,47,200,False,True
+laundry_detergent,4,LSTM,31,200,False,True
+fresh_apples,0,Unigram BoW + LogReg,12,1000,False,True
+fresh_apples,0,Word 1-2-gram + LogReg,12,1000,False,True
+fresh_apples,0,Word 1-3-gram + LogReg,12,1000,False,True
+fresh_apples,0,Char n-gram(3-5) + LogReg,11,1000,False,True
+fresh_apples,0,BoW+MLP(256),64,80,False,True
+fresh_apples,0,CNN,48,200,False,True
+fresh_apples,0,LSTM,33,200,False,True
+fresh_apples,1,Unigram BoW + LogReg,12,1000,False,True
+fresh_apples,1,Word 1-2-gram + LogReg,11,1000,False,True
+fresh_apples,1,Word 1-3-gram + LogReg,10,1000,False,True
+fresh_apples,1,Char n-gram(3-5) + LogReg,12,1000,False,True
+fresh_apples,1,BoW+MLP(256),60,80,False,True
+fresh_apples,1,CNN,51,200,False,True
+fresh_apples,1,LSTM,35,200,False,True
+fresh_apples,2,Unigram BoW + LogReg,12,1000,False,True
+fresh_apples,2,Word 1-2-gram + LogReg,11,1000,False,True
+fresh_apples,2,Word 1-3-gram + LogReg,12,1000,False,True
+fresh_apples,2,Char n-gram(3-5) + LogReg,12,1000,False,True
+fresh_apples,2,BoW+MLP(256),62,80,False,True
+fresh_apples,2,CNN,53,200,False,True
+fresh_apples,2,LSTM,38,200,False,True
+fresh_apples,3,Unigram BoW + LogReg,12,1000,False,True
+fresh_apples,3,Word 1-2-gram + LogReg,12,1000,False,True
+fresh_apples,3,Word 1-3-gram + LogReg,11,1000,False,True
+fresh_apples,3,Char n-gram(3-5) + LogReg,12,1000,False,True
+fresh_apples,3,BoW+MLP(256),61,80,False,True
+fresh_apples,3,CNN,50,200,False,True
+fresh_apples,3,LSTM,35,200,False,True
+fresh_apples,4,Unigram BoW + LogReg,12,1000,False,True
+fresh_apples,4,Word 1-2-gram + LogReg,13,1000,False,True
+fresh_apples,4,Word 1-3-gram + LogReg,11,1000,False,True
+fresh_apples,4,Char n-gram(3-5) + LogReg,12,1000,False,True
+fresh_apples,4,BoW+MLP(256),61,80,False,True
+fresh_apples,4,CNN,46,200,False,True
+fresh_apples,4,LSTM,33,200,False,True

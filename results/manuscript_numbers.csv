@@ -1,0 +1,48 @@
+name,value,source,note
+deep_models_pooled_median_epochs,47.5,robustness_convergence.csv,
+CNN_median_epochs,54.0,robustness_convergence.csv,range 46-62
+LSTM_median_epochs,36.0,robustness_convergence.csv,range 28-60
+BoW+MLP(256)_median_epochs,73.0,robustness_convergence.csv,range 58-78
+logreg_median_iter_min,14.0,robustness_convergence.csv,
+logreg_median_iter_max,16.5,robustness_convergence.csv,
+fits_hit_cap,0.0,robustness_convergence.csv,
+fits_not_converged,0.0,robustness_convergence.csv,
+n_fits,210.0,robustness_convergence.csv,
+overlap_mean,0.34090906666666665,leakage_audit_overlap.csv,
+overlap_pos_by_category_min,0.1928572,leakage_audit_overlap.csv,
+overlap_pos_by_category_max,0.2642856,leakage_audit_overlap.csv,
+overlap_neg_by_category_min,0.3821052,leakage_audit_overlap.csv,
+overlap_neg_by_category_max,0.46315799999999996,leakage_audit_overlap.csv,
+learning_gain_points_beer,13.259484118553132,learning_curve.csv,
+learning_gain_points_bread,8.749708612252348,learning_curve.csv,
+learning_gain_points_fresh_apples,3.076365603848963,learning_curve.csv,
+learning_gain_points_granulated_sugar,8.57315915696173,learning_curve.csv,
+learning_gain_points_laundry_detergent,7.471052871834516,learning_curve.csv,
+learning_gain_points_milk,6.586956254861043,learning_curve.csv,
+unigram_gain_median_min,1.49509,throughput_by_batch_summary.csv,
+unigram_gain_median_max,1.57589,throughput_by_batch_summary.csv,
+ds_minus_majority_points_k3,7.006666666666684,consensus.csv,
+ds_minus_weighted_points_k3,7.005555555555576,consensus.csv,
+weighted_minus_majority_points_k3,0.001111111111107288,consensus.csv,
+ds_minus_majority_points_k5,7.020000000000016,consensus.csv,
+ds_minus_weighted_points_k5,6.258888888888903,consensus.csv,
+weighted_minus_majority_points_k5,0.7611111111111124,consensus.csv,
+ds_minus_majority_points_k7,6.05555555555558,consensus.csv,
+ds_minus_weighted_points_k7,3.8555555555555676,consensus.csv,
+weighted_minus_majority_points_k7,2.200000000000013,consensus.csv,
+median_train_s_DistilBERT fine-tuned (3 epochs),12.87,pretrained/pretrained_per_run_from_log.csv,
+median_train_s_DistilBERT fine-tuned (matched stop),94.38499999999999,pretrained/pretrained_per_run_from_log.csv,
+median_train_s_MiniLM embeddings + LogReg,0.35050000000000003,pretrained/pretrained_per_run_from_log.csv,
+precision_mean_DistilBERT fine-tuned (3 epochs),0.9901885317096837,pretrained/pretrained_summary.csv,mean over the six categories
+recall_mean_DistilBERT fine-tuned (3 epochs),0.9871428571428572,pretrained/pretrained_summary.csv,mean over the six categories
+precision_mean_DistilBERT fine-tuned (matched stop),0.9957171826067199,pretrained/pretrained_summary.csv,mean over the six categories
+recall_mean_DistilBERT fine-tuned (matched stop),0.9909523809523811,pretrained/pretrained_summary.csv,mean over the six categories
+precision_mean_MiniLM embeddings + LogReg,0.9844318501699526,pretrained/pretrained_summary.csv,mean over the six categories
+recall_mean_MiniLM embeddings + LogReg,0.9557142857142858,pretrained/pretrained_summary.csv,mean over the six categories
+seed_sd_BoW+MLP(256),0.008223321666666667,significance_dispersion.csv,"ddof=1, mean over categories"
+seed_sd_CNN,0.010629476666666667,significance_dispersion.csv,"ddof=1, mean over categories"
+seed_sd_Char n-gram(3-5) + LogReg,0.0019799,significance_dispersion.csv,"ddof=1, mean over categories"
+seed_sd_LSTM,0.011712291666666666,significance_dispersion.csv,"ddof=1, mean over categories"
+seed_sd_Unigram BoW + LogReg,0.014030183333333335,significance_dispersion.csv,"ddof=1, mean over categories"
+seed_sd_Word 1-2-gram + LogReg,0.014286386666666666,significance_dispersion.csv,"ddof=1, mean over categories"
+seed_sd_Word 1-3-gram + LogReg,0.014474500000000001,significance_dispersion.csv,"ddof=1, mean over categories"

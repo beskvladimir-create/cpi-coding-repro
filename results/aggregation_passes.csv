@@ -1,0 +1,4 @@
+k,majority,weighted_1pass,weighted_2pass,weighted_5pass,weighted_20pass,dawid_skene,gap_ds_minus_weighted_1pass_pts,gap_ds_minus_weighted_2pass_pts,gap_ds_minus_weighted_5pass_pts,gap_ds_minus_weighted_20pass_pts,max_abs_change_vs_1pass_pts
+3,0.809811,0.809889,0.809811,0.809811,0.809811,0.883578,7.36889,7.37667,7.37667,7.37667,0.00777778
+5,0.870733,0.876944,0.876622,0.8765,0.876533,0.940756,6.38111,6.41333,6.42556,6.42222,0.0444444
+7,0.907489,0.9317,0.932756,0.932589,0.932489,0.9722,4.05,3.94444,3.96111,3.97111,0.105556

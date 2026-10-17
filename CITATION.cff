@@ -23,8 +23,10 @@ abstract: >-
   tracemalloc and every numerical library held to one thread, saves the
   output of every robustness check, adds the matched stopping rule to the
   training-budget check, measures throughput by batch size in all six
-  categories, and adds the pretrained-encoder baselines with their outputs;
-  the accuracy results are unchanged from 2.0.1.
+  categories, adds the pretrained-encoder baselines with their outputs, and
+  adds sensitivity checks (grade-block ablation, generator noise, final
+  reliability weights, annotator population) and a table of every paired
+  model comparison; the accuracy results are unchanged from 2.0.1.
   Release 1.1.0 remains the version that reproduces the
   numbers of arXiv:2606.02004v3. Contains no proprietary or production data.
 type: software

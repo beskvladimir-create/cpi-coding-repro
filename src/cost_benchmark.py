@@ -12,38 +12,64 @@ protocol used by confirm_models.py it records
                      that is what an operator actually pays);
   * size_bytes    -- serialized size of everything needed at inference time
                      (vectorizer plus classifier, or the torch state dict);
-  * peak_mib      -- peak Python heap allocation during the fit, via
+  * peak_mib      -- peak Python heap allocation during a fit, via
                      tracemalloc. For the torch models this undercounts tensor
                      memory held outside the Python allocator, so the
                      parameter count is reported alongside it.
 
-Everything runs single-threaded on CPU so the numbers are comparable; the
-thread caps are set before numpy/torch are imported by the caller where
-possible, and again on the torch side here.
+Timing and memory are measured in SEPARATE fits. tracemalloc hooks every
+Python allocation and slows the interpreter, so a fit timed while it runs is
+not the fit an operator pays for. Release 2.0.1 timed training with
+tracemalloc active, which inflated the scikit-learn fit times in particular.
+Here the timed fit runs with tracemalloc off; peak memory comes from a second,
+identical fit (same spec, same seed) that is not timed.
+
+Everything runs single-threaded on CPU so the numbers are comparable:
+OMP/MKL/OpenBLAS thread counts are set to one below, before numpy is
+imported; every measurement runs inside threadpoolctl.threadpool_limits(1);
+and torch is limited to one intra-op and one inter-op thread. The thread-pool
+state actually in force is recorded in results/cost_benchmark_env.json.
 
 Run:  python src/cost_benchmark.py   (writes results/cost_benchmark*.csv)
 """
 from __future__ import annotations
 
-import io
-import json
 import os
-import pickle
-import platform
-import time
-import tracemalloc
-import warnings
-from pathlib import Path
 
-import numpy as np
-import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.neural_network import MLPClassifier
+# Must precede the numpy / scipy / torch imports: the BLAS and OpenMP runtimes
+# read these once, when they are loaded.
+for _var in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS"):
+    os.environ[_var] = "1"
 
-import confirm_models as cm
-from make_synth import _categories
+import io  # noqa: E402
+import json  # noqa: E402
+import pickle  # noqa: E402
+import platform  # noqa: E402
+import time  # noqa: E402
+import tracemalloc  # noqa: E402
+import warnings  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+import numpy as np  # noqa: E402
+import pandas as pd  # noqa: E402
+from sklearn.feature_extraction.text import CountVectorizer  # noqa: E402
+from sklearn.linear_model import LogisticRegression  # noqa: E402
+from sklearn.model_selection import train_test_split  # noqa: E402
+from sklearn.neural_network import MLPClassifier  # noqa: E402
+from threadpoolctl import threadpool_info, threadpool_limits  # noqa: E402
+
+import confirm_models as cm  # noqa: E402
+from make_synth import _categories  # noqa: E402
+
+_INTEROP_SET = None
+if cm.TORCH_OK:
+    import torch
+    torch.set_num_threads(1)
+    try:  # only allowed before any inter-op parallel work has started
+        torch.set_num_interop_threads(1)
+        _INTEROP_SET = True
+    except RuntimeError:
+        _INTEROP_SET = False
 
 # Same narrow filter as confirm_models: a blanket "ignore" here would hide a
 # ConvergenceWarning raised while timing a fit.
@@ -83,10 +109,12 @@ def _warm_up() -> None:
     """Absorb one-off framework initialisation before any timing is taken.
 
     The first call into PyTorch in a process pays lazy initialisation that has
-    nothing to do with the model: measured cold it was 4.4 s against a 0.29 s
-    median for the same architecture, and it inflated the CNN's mean training
-    time by half. The same applies in miniature to the first scikit-learn fit,
-    which pays BLAS set-up. Both are paid here, outside the measured region.
+    nothing to do with the model, and left in the measured region it inflates
+    the first CNN fit and with it the mean and spread of the CNN's training
+    time. The size of the effect on the measuring host is recorded by
+    _cold_start_probe (cold_start_probe_s in results/cost_benchmark_env.json). The
+    same applies in miniature to the first scikit-learn fit, which pays BLAS
+    set-up. Both are paid here, outside the measured region.
     """
     texts = [f"warm up token {i} alpha beta" for i in range(64)]
     labels = np.array([i % 2 for i in range(64)])
@@ -135,15 +163,21 @@ def _pickle_size(obj) -> int:
 
 
 def _measure_sklearn(model_name: str, X_tr, y_tr, X_te, seed: int) -> dict:
+    # 1) timed fit, tracemalloc OFF
+    assert not tracemalloc.is_tracing()
     vec, clf = _sklearn_spec(model_name, seed)
-
-    tracemalloc.start()
     t0 = time.perf_counter()
     Xtr = vec.fit_transform(X_tr)      # vocabulary from the train split only
     clf.fit(Xtr, y_tr)
     fit_s = time.perf_counter() - t0
+
+    # 2) untimed, identical second fit, used only for peak heap allocation
+    vec_m, clf_m = _sklearn_spec(model_name, seed)
+    tracemalloc.start()
+    clf_m.fit(vec_m.fit_transform(X_tr), y_tr)
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
+    del vec_m, clf_m
 
     best = None
     for _ in range(REPEATS):
@@ -175,12 +209,21 @@ def _measure_torch(kind: str, X_tr, y_tr, X_te, seed: int) -> dict:
     import torch
     torch.set_num_threads(1)
 
-    tracemalloc.start()
+    # 1) timed fit, tracemalloc OFF
+    assert not tracemalloc.is_tracing()
     t0 = time.perf_counter()
     model, stoi, n_epochs = cm.train_torch(kind, X_tr, y_tr, seed)
     fit_s = time.perf_counter() - t0
+
+    # 2) untimed, identical second fit (same seed), used only for peak memory
+    tracemalloc.start()
+    _m2, _s2, n_epochs_mem = cm.train_torch(kind, X_tr, y_tr, seed)
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
+    del _m2, _s2
+    if n_epochs_mem != n_epochs:  # training is seeded; this should not happen
+        print(f"  WARNING: memory fit of {kind} ran {n_epochs_mem} epochs "
+              f"against {n_epochs} in the timed fit")
 
     best = None
     for _ in range(REPEATS):
@@ -247,8 +290,11 @@ def summarize(per_run: pd.DataFrame) -> pd.DataFrame:
         "size_kib_mean": g.size_bytes.mean() / 1024,
         "peak_mib_median": g.peak_mib.median(),
         "n_params_mean": g.n_params.mean(),
-    }).reset_index().sort_values("fit_s_median")
-    return out
+    })
+    if "n_epochs" in per_run.columns:     # realised epochs, torch models only
+        out["n_epochs_median"] = g.n_epochs.median()
+        out["n_epochs_max"] = g.n_epochs.max()
+    return out.reset_index().sort_values("fit_s_median")
 
 
 def environment() -> dict:
@@ -269,6 +315,16 @@ def environment() -> dict:
         import torch
         env["torch"] = torch.__version__
         env["torch_threads"] = torch.get_num_threads()
+        env["torch_interop_threads"] = torch.get_num_interop_threads()
+        env["torch_set_num_interop_threads_1_applied"] = _INTEROP_SET
+    try:
+        import threadpoolctl
+        env["threadpoolctl"] = threadpoolctl.__version__
+    except Exception:
+        pass
+    env["thread_env_vars"] = {v: os.environ.get(v) for v in
+                              ("OMP_NUM_THREADS", "MKL_NUM_THREADS",
+                               "OPENBLAS_NUM_THREADS")}
     try:
         with open("/proc/cpuinfo") as fh:
             for line in fh:
@@ -282,9 +338,14 @@ def environment() -> dict:
 
 def main() -> None:
     print("torch available:", cm.TORCH_OK)
-    cold = _cold_start_probe()
-    _warm_up()
-    per_run = run()
+    with threadpool_limits(limits=1):
+        pools = threadpool_info()          # state in force while measuring
+        for pool in pools:                 # library file name only, no local path
+            if pool.get("filepath"):
+                pool["filepath"] = os.path.basename(pool["filepath"])
+        cold = _cold_start_probe()
+        _warm_up()
+        per_run = run()
     summary = summarize(per_run)
     RESULTS_DIR.mkdir(exist_ok=True)
     per_run.to_csv(RESULTS_DIR / "cost_benchmark_per_run.csv",
@@ -292,6 +353,19 @@ def main() -> None:
     summary.to_csv(RESULTS_DIR / "cost_benchmark_summary.csv",
                    index=False, float_format="%.6g")
     env = environment()
+    env["threadpool_limits"] = 1
+    env["threadpool_info_during_measurement"] = pools
+    env["measurement"] = {
+        "tracemalloc_during_timing": False,
+        "fit_timing": "wall clock (time.perf_counter) of one fit with "
+                      "tracemalloc off",
+        "peak_memory": "tracemalloc peak over a second, identical, untimed fit "
+                       "(same spec and seed)",
+        "inference": f"fastest of {REPEATS} passes over the test split, "
+                     "feature extraction included",
+        "warm_up": "both families exercised once on a throwaway problem "
+                   "before any timing",
+    }
     env["cold_start_probe_s"] = cold
     (RESULTS_DIR / "cost_benchmark_env.json").write_text(
         json.dumps(env, indent=2) + "\n")

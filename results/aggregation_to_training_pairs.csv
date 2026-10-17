@@ -1,0 +1,19 @@
+model,k,rule,against,rule_wins,against_wins,ties,mean_diff_points,leader,leader_share_non_tied,band
+Char n-gram(3-5) + LogReg,3,Reliability-weighted,Majority,1,0,29,0.011183333333333323,Reliability-weighted,1.0,indistinguishable
+Char n-gram(3-5) + LogReg,3,Dawid-Skene,Majority,26,4,0,1.7186866666666685,Dawid-Skene,0.8666666666666667,small but consistent
+Char n-gram(3-5) + LogReg,3,Dawid-Skene,Reliability-weighted,26,4,0,1.7075033333333354,Dawid-Skene,0.8666666666666667,small but consistent
+Char n-gram(3-5) + LogReg,5,Reliability-weighted,Majority,9,5,16,0.15454333333333312,Reliability-weighted,0.6428571428571429,indistinguishable
+Char n-gram(3-5) + LogReg,5,Dawid-Skene,Majority,30,0,0,1.792863333333334,Dawid-Skene,1.0,reliable
+Char n-gram(3-5) + LogReg,5,Dawid-Skene,Reliability-weighted,30,0,0,1.6383200000000007,Dawid-Skene,1.0,reliable
+Char n-gram(3-5) + LogReg,7,Reliability-weighted,Majority,18,4,8,0.6387933333333348,Reliability-weighted,0.8181818181818182,small but consistent
+Char n-gram(3-5) + LogReg,7,Dawid-Skene,Majority,29,0,1,1.2245733333333342,Dawid-Skene,1.0,reliable
+Char n-gram(3-5) + LogReg,7,Dawid-Skene,Reliability-weighted,22,6,2,0.5857799999999994,Dawid-Skene,0.7857142857142857,small but consistent
+Unigram BoW + LogReg,3,Reliability-weighted,Majority,2,0,28,0.023989999999999657,Reliability-weighted,1.0,indistinguishable
+Unigram BoW + LogReg,3,Dawid-Skene,Majority,13,16,1,0.016293333333334086,Dawid-Skene,0.4482758620689655,indistinguishable
+Unigram BoW + LogReg,3,Dawid-Skene,Reliability-weighted,13,16,1,-0.007696666666665576,Reliability-weighted,0.5517241379310345,indistinguishable
+Unigram BoW + LogReg,5,Reliability-weighted,Majority,8,3,19,0.13239666666666686,Reliability-weighted,0.7272727272727273,small but consistent
+Unigram BoW + LogReg,5,Dawid-Skene,Majority,22,8,0,0.735023333333333,Dawid-Skene,0.7333333333333333,small but consistent
+Unigram BoW + LogReg,5,Dawid-Skene,Reliability-weighted,19,11,0,0.6026266666666661,Dawid-Skene,0.6333333333333333,indistinguishable
+Unigram BoW + LogReg,7,Reliability-weighted,Majority,11,11,8,0.10327666666666588,Reliability-weighted,0.5,indistinguishable
+Unigram BoW + LogReg,7,Dawid-Skene,Majority,21,7,2,0.6599933333333333,Dawid-Skene,0.75,small but consistent
+Unigram BoW + LogReg,7,Dawid-Skene,Reliability-weighted,20,8,2,0.5567166666666675,Dawid-Skene,0.7142857142857143,small but consistent

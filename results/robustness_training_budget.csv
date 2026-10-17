@@ -1,0 +1,241 @@
+category,seed,model,setting,f1,epochs_run,restored_epoch
+granulated_sugar,0,CNN,"8 epochs, fixed",0.942446,8,
+granulated_sugar,0,CNN,"40 epochs, fixed",0.970803,40,
+granulated_sugar,0,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.974359,55,
+granulated_sugar,0,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.963768,40,22
+granulated_sugar,0,LSTM,"8 epochs, fixed",0.939929,8,
+granulated_sugar,0,LSTM,"40 epochs, fixed",0.936803,40,
+granulated_sugar,0,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.936803,41,
+granulated_sugar,0,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.944649,40,21
+granulated_sugar,1,CNN,"8 epochs, fixed",0.926471,8,
+granulated_sugar,1,CNN,"40 epochs, fixed",0.941606,40,
+granulated_sugar,1,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.941606,52,
+granulated_sugar,1,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.927007,40,21
+granulated_sugar,1,LSTM,"8 epochs, fixed",0.918519,8,
+granulated_sugar,1,LSTM,"40 epochs, fixed",0.963235,40,
+granulated_sugar,1,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.963235,39,
+granulated_sugar,1,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.928571,40,23
+granulated_sugar,2,CNN,"8 epochs, fixed",0.916968,8,
+granulated_sugar,2,CNN,"40 epochs, fixed",0.940741,40,
+granulated_sugar,2,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.940741,50,
+granulated_sugar,2,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.933824,40,24
+granulated_sugar,2,LSTM,"8 epochs, fixed",0.942446,8,
+granulated_sugar,2,LSTM,"40 epochs, fixed",0.941176,40,
+granulated_sugar,2,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.941176,32,
+granulated_sugar,2,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.922509,40,35
+granulated_sugar,3,CNN,"8 epochs, fixed",0.950704,8,
+granulated_sugar,3,CNN,"40 epochs, fixed",0.971631,40,
+granulated_sugar,3,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.975089,56,
+granulated_sugar,3,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.964789,40,32
+granulated_sugar,3,LSTM,"8 epochs, fixed",0.946619,8,
+granulated_sugar,3,LSTM,"40 epochs, fixed",0.978723,40,
+granulated_sugar,3,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.978723,33,
+granulated_sugar,3,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.954704,40,19
+granulated_sugar,4,CNN,"8 epochs, fixed",0.921933,8,
+granulated_sugar,4,CNN,"40 epochs, fixed",0.933333,40,
+granulated_sugar,4,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.933333,56,
+granulated_sugar,4,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.936803,40,38
+granulated_sugar,4,LSTM,"8 epochs, fixed",0.930403,8,
+granulated_sugar,4,LSTM,"40 epochs, fixed",0.929368,40,
+granulated_sugar,4,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.929368,33,
+granulated_sugar,4,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.925373,40,34
+milk,0,CNN,"8 epochs, fixed",0.931298,8,
+milk,0,CNN,"40 epochs, fixed",0.935361,40,
+milk,0,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.935361,60,
+milk,0,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.939394,40,32
+milk,0,LSTM,"8 epochs, fixed",0.898438,8,
+milk,0,LSTM,"40 epochs, fixed",0.93985,40,
+milk,0,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.93985,44,
+milk,0,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.935849,40,15
+milk,1,CNN,"8 epochs, fixed",0.957143,8,
+milk,1,CNN,"40 epochs, fixed",0.948097,40,
+milk,1,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.951389,58,
+milk,1,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.947368,40,11
+milk,1,LSTM,"8 epochs, fixed",0.924138,8,
+milk,1,LSTM,"40 epochs, fixed",0.94198,40,
+milk,1,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.94198,31,
+milk,1,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.915825,40,10
+milk,2,CNN,"8 epochs, fixed",0.946996,8,
+milk,2,CNN,"40 epochs, fixed",0.957746,40,
+milk,2,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.961131,55,
+milk,2,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.946996,40,14
+milk,2,LSTM,"8 epochs, fixed",0.945055,8,
+milk,2,LSTM,"40 epochs, fixed",0.960854,40,
+milk,2,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.960854,49,
+milk,2,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.957143,40,36
+milk,3,CNN,"8 epochs, fixed",0.948529,8,
+milk,3,CNN,"40 epochs, fixed",0.962963,40,
+milk,3,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.962963,60,
+milk,3,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.952381,40,13
+milk,3,LSTM,"8 epochs, fixed",0.955882,8,
+milk,3,LSTM,"40 epochs, fixed",0.959707,40,
+milk,3,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.95941,60,
+milk,3,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.959707,40,29
+milk,4,CNN,"8 epochs, fixed",0.967033,8,
+milk,4,CNN,"40 epochs, fixed",0.955882,40,
+milk,4,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.955882,56,
+milk,4,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.963504,40,29
+milk,4,LSTM,"8 epochs, fixed",0.970803,8,
+milk,4,LSTM,"40 epochs, fixed",0.963504,40,
+milk,4,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.963504,38,
+milk,4,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.964029,40,26
+bread,0,CNN,"8 epochs, fixed",0.93007,8,
+bread,0,CNN,"40 epochs, fixed",0.954064,40,
+bread,0,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.950704,55,
+bread,0,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.957447,40,34
+bread,0,LSTM,"8 epochs, fixed",0.950355,8,
+bread,0,LSTM,"40 epochs, fixed",0.964286,40,
+bread,0,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.964286,35,
+bread,0,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.953737,40,35
+bread,1,CNN,"8 epochs, fixed",0.951389,8,
+bread,1,CNN,"40 epochs, fixed",0.972222,40,
+bread,1,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.972222,56,
+bread,1,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.968858,40,28
+bread,1,LSTM,"8 epochs, fixed",0.945205,8,
+bread,1,LSTM,"40 epochs, fixed",0.955631,40,
+bread,1,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.955631,39,
+bread,1,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.958904,40,29
+bread,2,CNN,"8 epochs, fixed",0.912548,8,
+bread,2,CNN,"40 epochs, fixed",0.951311,40,
+bread,2,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.951311,52,
+bread,2,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.935849,40,40
+bread,2,LSTM,"8 epochs, fixed",0.886364,8,
+bread,2,LSTM,"40 epochs, fixed",0.935361,40,
+bread,2,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.935361,52,
+bread,2,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.909091,40,28
+bread,3,CNN,"8 epochs, fixed",0.924188,8,
+bread,3,CNN,"40 epochs, fixed",0.953737,40,
+bread,3,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.953737,57,
+bread,3,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.95,40,14
+bread,3,LSTM,"8 epochs, fixed",0.935714,8,
+bread,3,LSTM,"40 epochs, fixed",0.940351,40,
+bread,3,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.940351,34,
+bread,3,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.940767,40,17
+bread,4,CNN,"8 epochs, fixed",0.918149,8,
+bread,4,CNN,"40 epochs, fixed",0.957746,40,
+bread,4,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.958042,62,
+bread,4,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.925267,40,11
+bread,4,LSTM,"8 epochs, fixed",0.899281,8,
+bread,4,LSTM,"40 epochs, fixed",0.953737,40,
+bread,4,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.953737,38,
+bread,4,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.953737,40,29
+beer,0,CNN,"8 epochs, fixed",0.93633,8,
+beer,0,CNN,"40 epochs, fixed",0.948529,40,
+beer,0,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.948529,52,
+beer,0,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.928302,40,8
+beer,0,LSTM,"8 epochs, fixed",0.935252,8,
+beer,0,LSTM,"40 epochs, fixed",0.947761,40,
+beer,0,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.947761,42,
+beer,0,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.948148,40,17
+beer,1,CNN,"8 epochs, fixed",0.954064,8,
+beer,1,CNN,"40 epochs, fixed",0.961404,40,
+beer,1,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.961404,56,
+beer,1,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.950704,40,19
+beer,1,LSTM,"8 epochs, fixed",0.951049,8,
+beer,1,LSTM,"40 epochs, fixed",0.957143,40,
+beer,1,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.957143,32,
+beer,1,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.953737,40,13
+beer,2,CNN,"8 epochs, fixed",0.947735,8,
+beer,2,CNN,"40 epochs, fixed",0.961672,40,
+beer,2,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.961672,57,
+beer,2,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.950704,40,28
+beer,2,LSTM,"8 epochs, fixed",0.94198,8,
+beer,2,LSTM,"40 epochs, fixed",0.955017,40,
+beer,2,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.955017,35,
+beer,2,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.945205,40,19
+beer,3,CNN,"8 epochs, fixed",0.948148,8,
+beer,3,CNN,"40 epochs, fixed",0.967033,40,
+beer,3,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.967033,53,
+beer,3,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.967033,40,37
+beer,3,LSTM,"8 epochs, fixed",0.959707,8,
+beer,3,LSTM,"40 epochs, fixed",0.963504,40,
+beer,3,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.963504,45,
+beer,3,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.956522,40,13
+beer,4,CNN,"8 epochs, fixed",0.92029,8,
+beer,4,CNN,"40 epochs, fixed",0.947368,40,
+beer,4,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.947368,55,
+beer,4,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.942857,40,33
+beer,4,LSTM,"8 epochs, fixed",0.931408,8,
+beer,4,LSTM,"40 epochs, fixed",0.953405,40,
+beer,4,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.953405,37,
+beer,4,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.942029,40,31
+laundry_detergent,0,CNN,"8 epochs, fixed",0.959707,8,
+laundry_detergent,0,CNN,"40 epochs, fixed",0.978102,40,
+laundry_detergent,0,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.978102,52,
+laundry_detergent,0,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.95203,40,9
+laundry_detergent,0,LSTM,"8 epochs, fixed",0.937269,8,
+laundry_detergent,0,LSTM,"40 epochs, fixed",0.962963,40,
+laundry_detergent,0,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.962963,41,
+laundry_detergent,0,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.939068,40,6
+laundry_detergent,1,CNN,"8 epochs, fixed",0.967273,8,
+laundry_detergent,1,CNN,"40 epochs, fixed",0.981949,40,
+laundry_detergent,1,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.985612,50,
+laundry_detergent,1,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.978417,40,17
+laundry_detergent,1,LSTM,"8 epochs, fixed",0.953737,8,
+laundry_detergent,1,LSTM,"40 epochs, fixed",0.982079,40,
+laundry_detergent,1,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.978571,30,
+laundry_detergent,1,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.967972,40,15
+laundry_detergent,2,CNN,"8 epochs, fixed",0.967972,8,
+laundry_detergent,2,CNN,"40 epochs, fixed",0.985714,40,
+laundry_detergent,2,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.985714,50,
+laundry_detergent,2,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.971429,40,18
+laundry_detergent,2,LSTM,"8 epochs, fixed",0.971223,8,
+laundry_detergent,2,LSTM,"40 epochs, fixed",0.978417,40,
+laundry_detergent,2,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.978417,28,
+laundry_detergent,2,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.967742,40,24
+laundry_detergent,3,CNN,"8 epochs, fixed",0.95203,8,
+laundry_detergent,3,CNN,"40 epochs, fixed",0.981818,40,
+laundry_detergent,3,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.981818,46,
+laundry_detergent,3,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.959707,40,16
+laundry_detergent,3,LSTM,"8 epochs, fixed",0.963235,8,
+laundry_detergent,3,LSTM,"40 epochs, fixed",0.978261,40,
+laundry_detergent,3,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.978261,41,
+laundry_detergent,3,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.971014,40,23
+laundry_detergent,4,CNN,"8 epochs, fixed",0.947761,8,
+laundry_detergent,4,CNN,"40 epochs, fixed",0.96679,40,
+laundry_detergent,4,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.96679,47,
+laundry_detergent,4,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.96679,40,24
+laundry_detergent,4,LSTM,"8 epochs, fixed",0.955882,8,
+laundry_detergent,4,LSTM,"40 epochs, fixed",0.963235,40,
+laundry_detergent,4,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.967033,31,
+laundry_detergent,4,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.955224,40,12
+fresh_apples,0,CNN,"8 epochs, fixed",0.963768,8,
+fresh_apples,0,CNN,"40 epochs, fixed",0.970803,40,
+fresh_apples,0,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.970803,48,
+fresh_apples,0,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.970803,40,35
+fresh_apples,0,LSTM,"8 epochs, fixed",0.956522,8,
+fresh_apples,0,LSTM,"40 epochs, fixed",0.963235,40,
+fresh_apples,0,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.963235,33,
+fresh_apples,0,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.955882,40,34
+fresh_apples,1,CNN,"8 epochs, fixed",0.95941,8,
+fresh_apples,1,CNN,"40 epochs, fixed",0.971429,40,
+fresh_apples,1,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.967972,51,
+fresh_apples,1,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.967509,40,15
+fresh_apples,1,LSTM,"8 epochs, fixed",0.939502,8,
+fresh_apples,1,LSTM,"40 epochs, fixed",0.947368,40,
+fresh_apples,1,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.947368,35,
+fresh_apples,1,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.939929,40,17
+fresh_apples,2,CNN,"8 epochs, fixed",0.971831,8,
+fresh_apples,2,CNN,"40 epochs, fixed",0.971831,40,
+fresh_apples,2,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.968421,53,
+fresh_apples,2,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.975439,40,10
+fresh_apples,2,LSTM,"8 epochs, fixed",0.948805,8,
+fresh_apples,2,LSTM,"40 epochs, fixed",0.952055,40,
+fresh_apples,2,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.952055,38,
+fresh_apples,2,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.955631,40,8
+fresh_apples,3,CNN,"8 epochs, fixed",0.974729,8,
+fresh_apples,3,CNN,"40 epochs, fixed",0.985507,40,
+fresh_apples,3,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.985507,50,
+fresh_apples,3,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.981818,40,39
+fresh_apples,3,LSTM,"8 epochs, fixed",0.971223,8,
+fresh_apples,3,LSTM,"40 epochs, fixed",0.978261,40,
+fresh_apples,3,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.978261,35,
+fresh_apples,3,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.974729,40,11
+fresh_apples,4,CNN,"8 epochs, fixed",0.963235,8,
+fresh_apples,4,CNN,"40 epochs, fixed",0.974545,40,
+fresh_apples,4,CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.974545,46,
+fresh_apples,4,CNN,"validation early stop (20% of train, cap 40, best val F1)",0.96,40,11
+fresh_apples,4,LSTM,"8 epochs, fixed",0.95941,8,
+fresh_apples,4,LSTM,"40 epochs, fixed",0.974545,40,
+fresh_apples,4,LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",0.974545,33,
+fresh_apples,4,LSTM,"validation early stop (20% of train, cap 40, best val F1)",0.974545,40,15

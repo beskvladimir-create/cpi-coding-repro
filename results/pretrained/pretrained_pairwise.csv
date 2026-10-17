@@ -1,0 +1,28 @@
+model,vs,wins,losses,ties,mean_diff,p_raw
+DistilBERT fine-tuned (matched stop),Unigram BoW + LogReg,30,0,0,0.02722999999999998,1.7311263949197288e-06
+DistilBERT fine-tuned (matched stop),Word 1-2-gram + LogReg,30,0,0,0.02621999999999998,1.732216233144114e-06
+DistilBERT fine-tuned (matched stop),Word 1-3-gram + LogReg,30,0,0,0.02860666666666665,1.7311263949197288e-06
+DistilBERT fine-tuned (matched stop),Char n-gram(3-5) + LogReg,3,18,9,-0.003856666666666671,0.0011046241941367618
+DistilBERT fine-tuned (matched stop),BoW+MLP(256),28,1,1,0.016436666666666665,4.312241613496811e-06
+DistilBERT fine-tuned (matched stop),CNN,30,0,0,0.030993333333333317,1.7333066441991056e-06
+DistilBERT fine-tuned (matched stop),LSTM,30,0,0,0.03589666666666666,1.7311263949197288e-06
+DistilBERT fine-tuned (matched stop),DistilBERT fine-tuned (3 epochs),21,2,7,0.004776666666666659,0.00011050928512571985
+DistilBERT fine-tuned (matched stop),MiniLM embeddings + LogReg,29,1,0,0.02364333333333331,2.869925421157438e-06
+DistilBERT fine-tuned (3 epochs),Unigram BoW + LogReg,29,0,1,0.02245333333333332,2.5630832507250074e-06
+DistilBERT fine-tuned (3 epochs),Word 1-2-gram + LogReg,29,0,1,0.02144333333333332,2.5613577487758663e-06
+DistilBERT fine-tuned (3 epochs),Word 1-3-gram + LogReg,29,0,1,0.023829999999999987,2.5596332107133318e-06
+DistilBERT fine-tuned (3 epochs),Char n-gram(3-5) + LogReg,2,23,5,-0.00863333333333333,2.5005760734087637e-05
+DistilBERT fine-tuned (3 epochs),BoW+MLP(256),24,4,2,0.011660000000000007,9.843466697693246e-05
+DistilBERT fine-tuned (3 epochs),CNN,29,0,1,0.02621666666666666,2.5630832507250074e-06
+DistilBERT fine-tuned (3 epochs),LSTM,30,0,0,0.03112,1.862645149230957e-09
+DistilBERT fine-tuned (3 epochs),DistilBERT fine-tuned (matched stop),2,21,7,-0.004776666666666659,0.00011050928512571985
+DistilBERT fine-tuned (3 epochs),MiniLM embeddings + LogReg,28,2,0,0.018866666666666653,2.368094914021711e-05
+MiniLM embeddings + LogReg,Unigram BoW + LogReg,17,12,1,0.0035866666666666677,0.2942763667819519
+MiniLM embeddings + LogReg,Word 1-2-gram + LogReg,16,13,1,0.0025766666666666676,0.4172905465714055
+MiniLM embeddings + LogReg,Word 1-3-gram + LogReg,17,12,1,0.004963333333333334,0.1443976377239425
+MiniLM embeddings + LogReg,Char n-gram(3-5) + LogReg,0,30,0,-0.027499999999999983,1.7289484360195754e-06
+MiniLM embeddings + LogReg,BoW+MLP(256),8,22,0,-0.007206666666666647,0.012450238595285627
+MiniLM embeddings + LogReg,CNN,20,9,1,0.007350000000000005,0.026665616912217905
+MiniLM embeddings + LogReg,LSTM,25,5,0,0.012253333333333345,0.0002943535696072254
+MiniLM embeddings + LogReg,DistilBERT fine-tuned (matched stop),1,29,0,-0.02364333333333331,2.869925421157438e-06
+MiniLM embeddings + LogReg,DistilBERT fine-tuned (3 epochs),2,28,0,-0.018866666666666653,2.368094914021711e-05

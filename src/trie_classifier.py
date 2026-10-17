@@ -9,8 +9,10 @@ The phrase sets are taken verbatim from make_synth's CategoryConfig so the
 rule-based stage and the data generator share one source of truth.
 
 Coverage = admitted / total over a stream of items. An item admitted by more
-than one category is reported as 'ambiguous' (passed to the neural stage in the
-full system); an item admitted by none is 'unidentified'.
+than one category is reported as 'ambiguous': the rules do not resolve it, and
+in the full system it is routed to expert review, as the paper describes (in
+the released benchmark no item is ambiguous; see results/coverage.csv). An
+item admitted by none is 'unidentified'.
 """
 from __future__ import annotations
 

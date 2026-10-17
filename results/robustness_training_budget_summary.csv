@@ -1,0 +1,9 @@
+model,setting,n,f1_mean,f1_sd,epochs_run_median,restored_epoch_median
+CNN,"8 epochs, fixed",30,0.946005,0.0181532,8,
+CNN,"40 epochs, fixed",30,0.962058,0.0146417,40,
+CNN,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",30,0.962305,0.014836,54,
+CNN,"validation early stop (20% of train, cap 40, best val F1)",30,0.95456,0.0158084,40,21.5
+LSTM,"8 epochs, fixed",30,0.942178,0.0208695,8,
+LSTM,"40 epochs, fixed",30,0.957394,0.0143813,40,
+LSTM,"matched rule (train loss, tol 1e-4, patience 10, cap 200)",30,0.957394,0.0142568,36,
+LSTM,"validation early stop (20% of train, cap 40, best val F1)",30,0.949066,0.0167914,40,20

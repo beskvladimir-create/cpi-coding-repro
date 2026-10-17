@@ -148,7 +148,7 @@ def _maybe_abbrev(token: str, rng: np.random.RandomState) -> str:
     mode = rng.randint(3)
     if mode == 0:                                   # truncate
         return token[: max(3, len(token) - rng.randint(1, 3))]
-    if mode == 1:                                   # drop a vowel
+    if mode == 1:                                   # drop all vowels
         no_vowels = [c for c in token if c not in "aeiou"]
         return "".join(no_vowels) if len(no_vowels) >= 3 else token
     idx = rng.randint(len(token) - 1)               # swap two adjacent chars

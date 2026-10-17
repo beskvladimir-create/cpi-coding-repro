@@ -1,0 +1,16 @@
+{
+  "repo_commit": "28c733a",
+  "ft_model": "distilbert-base-uncased",
+  "ft_model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "emb_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "emb_model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.16.1",
+  "python": "3.13.15",
+  "cpu": "x86_64",
+  "hyperparams": {"max_len": 32, "batch": 32, "lr": 2e-05, "max_epochs": 200, "tol": 0.0001, "n_iter_no_change": 10, "fixed_epochs": 3},
+  "quick": false,
+  "note": "Transcribed from the pretrained_env.json written by the Kaggle run (notebook cpi_pretrained_baselines_gpu, 2026-10-17)."
+}

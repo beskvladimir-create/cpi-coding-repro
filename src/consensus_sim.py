@@ -1,4 +1,4 @@
-"""Consensus-rule Monte-Carlo (Section 9 'Validating the consensus rule').
+"""Consensus-rule Monte-Carlo (paper: Results, "The aggregation rule: recovering labels").
 
 Reproduces the simulation that validates the human-in-the-loop labeling
 protocol of arXiv:2606.02004, independent of any real data:
@@ -13,8 +13,8 @@ protocol of arXiv:2606.02004, independent of any real data:
 
 Three aggregators recover the true label:
   * majority vote;
-  * reliability-weighted vote (Eq. 2): O = sum_a r_a v_a, with an additive
-    online weight update and a fixed cap;
+  * reliability-weighted vote (Eq. 2): O = sum_a r_a v_a, with the additive
+    online weight update and fixed cap of Eq. 3;
   * Dawid-Skene EM (latent per-annotator confusion matrices).
 
 Expected qualitative result (matches the paper): Dawid-Skene dominates;
@@ -31,7 +31,7 @@ N_ANNOTATORS = 12
 K_VALUES = [3, 5, 7]
 N_RUNS = 60
 
-# reliability-weighted update hyper-parameters (additive rule with cap, Eq. 2)
+# reliability-weighted update hyper-parameters (additive rule with cap, Eq. 3)
 R_INIT = 1.0
 R_DELTA = 0.10
 R_CAP = 2.0
@@ -84,7 +84,7 @@ def _majority(votes, voters, rng) -> np.ndarray:
 
 
 def _reliability_weighted(votes, voters, rng) -> np.ndarray:
-    """Online additive weight update with a fixed cap (Eq. 2)."""
+    """Vote of Eq. 2 with the online additive weight update and cap of Eq. 3."""
     r = np.full(N_ANNOTATORS, R_INIT)
     out = []
     for i in range(len(votes)):

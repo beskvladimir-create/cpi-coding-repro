@@ -6,11 +6,33 @@ item at once and iterates 30 times. That is an asymmetry in information, not
 only in estimator. This re-runs the weighted rule with extra passes (weights
 carried over, labels re-decided with the converged weights) to separate the
 two explanations.
+
+Outputs: results/aggregation_passes.csv (mean accuracy per k for majority,
+the weighted rule with 1/2/5/20 passes and Dawid-Skene, plus the gaps in
+points) and results/aggregation_passes_per_run.csv (one row per k and run).
+
+How this simulation differs from consensus_sim.py (results/consensus.csv):
+it reuses that module's annotator population, vote generator and the three
+aggregators, with the same 60 runs per k and the same per-(k, run) seed
+RandomState(1000*k + run), but
+  * ground truth is drawn i.i.d. as rng.randint(0, 2, N_ITEMS), so the class
+    balance varies from run to run, whereas consensus_sim.py uses exactly 750
+    positives and 750 negatives, shuffled; because the truth draw consumes the
+    random stream differently, annotator accuracies and votes also differ
+    from consensus_sim.py for the same (k, run);
+  * the reliability-weighted rule breaks ties with its own stream,
+    RandomState(7*run + k), rather than sharing the run's stream.
+The figures here are therefore close to, but not identical with, those in
+consensus.csv; the comparison that matters (passes against Dawid-Skene) is
+made within this script on identical votes.
 """
 import sys
+from pathlib import Path
 import numpy as np, pandas as pd
-sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import consensus_sim as cs
+
+RESULTS = Path(__file__).resolve().parent.parent / "results"
 
 N_RUNS = 60
 
@@ -44,7 +66,7 @@ def main() -> None:
             votes, voters = cs._generate_votes(rng, truth, acc, k)
             maj = cs._majority(votes, voters, rng)
             ds = cs._dawid_skene(votes, voters, rng)
-            rec = {"k": k, "majority": (maj == truth).mean(),
+            rec = {"k": k, "run": run, "majority": (maj == truth).mean(),
                    "dawid_skene": (ds == truth).mean()}
             for passes in (1, 2, 5, 20):
                 pred, _r = weighted_multipass(votes, voters,
@@ -53,15 +75,27 @@ def main() -> None:
             rows.append(rec)
 
     d = pd.DataFrame(rows)
-    g = d.groupby("k").mean().drop(columns=[]) if False else d.groupby("k").mean()
     cols = ["majority", "weighted_1pass", "weighted_2pass", "weighted_5pass",
             "weighted_20pass", "dawid_skene"]
-    print(g[cols].round(4).to_string())
+    g = d.groupby("k")[cols].mean()
+    print(g.round(4).to_string())
     print()
+    for p in (1, 2, 5, 20):
+        g[f"gap_ds_minus_weighted_{p}pass_pts"] = (
+            g["dawid_skene"] - g[f"weighted_{p}pass"]) * 100
+    g["max_abs_change_vs_1pass_pts"] = (
+        g[["weighted_2pass", "weighted_5pass", "weighted_20pass"]]
+        .sub(g["weighted_1pass"], axis=0).abs().max(axis=1) * 100)
     for k in cs.K_VALUES:
-        gap1 = (g.loc[k, "dawid_skene"] - g.loc[k, "weighted_1pass"]) * 100
-        gap20 = (g.loc[k, "dawid_skene"] - g.loc[k, "weighted_20pass"]) * 100
-        print(f"k={k}: DS over weighted  1 pass {gap1:+.1f} pts   20 passes {gap20:+.1f} pts")
+        print(f"k={k}: DS over weighted  1 pass "
+              f"{g.loc[k, 'gap_ds_minus_weighted_1pass_pts']:+.1f} pts   20 passes "
+              f"{g.loc[k, 'gap_ds_minus_weighted_20pass_pts']:+.1f} pts")
+    RESULTS.mkdir(exist_ok=True)
+    g.reset_index().to_csv(RESULTS / "aggregation_passes.csv", index=False,
+                           float_format="%.6g")
+    d.to_csv(RESULTS / "aggregation_passes_per_run.csv", index=False,
+             float_format="%.6g")
+    print("  wrote results/aggregation_passes.csv, results/aggregation_passes_per_run.csv")
 
 
 if __name__ == "__main__":
