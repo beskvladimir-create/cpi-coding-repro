@@ -1,9 +1,22 @@
-# NOTE: torch on Intel (x86_64) macOS tops out at 2.2.2, which requires NumPy 1.x.
-# numpy is pinned <2 for that ABI; the rest are pinned to the matching stack.
-numpy<2
-pandas>=2.2,<2.3
-scikit-learn>=1.4
-matplotlib>=3.8
-pyarrow>=15.0
-scipy>=1.11
-torch>=2.2,<2.3
+# Exact versions of the environment that produced the release 2.1.0 cost
+# benchmark and robustness results (Python 3.13.16, Linux x86_64, CPU only);
+# see results/cost_benchmark_env.json for the full record of that run.
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.17.1
+scikit-learn==1.9.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+pyarrow==26.0.0
+matplotlib==3.11.2
+torch==2.5.1
+
+# Intel (x86_64) macOS: PyTorch wheels for this platform stop at 2.2.2, which
+# needs NumPy < 2. There, install torch==2.2.2 and numpy<2 instead of the two
+# pins above; the scikit-learn models are unaffected, but CNN/LSTM figures may
+# differ in the last digits from the released ones.
+
+# Optional, only for src/pretrained_baselines.py (pretrained-encoder baselines;
+# a GPU is advisable). The released pretrained results were run with
+# transformers 5.16.1 and torch 2.11.0 on Kaggle:
+# transformers==4.46.3

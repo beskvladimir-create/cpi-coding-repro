@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the accompanying paper."
-title: "cpi-coding-repro: reproducibility package for coding retail product names to consumer-price categories"
+title: "cpi-coding-repro: reproducibility package for Accuracy and Cost in Product Coding for Consumer Price Statistics: A Reproducible Benchmark"
 abstract: >-
   A fully synthetic, reproducible benchmark and evaluation code for coding
   short retail product names to consumer-price categories, accompanying
@@ -19,6 +19,12 @@ abstract: >-
   decision threshold, the measurement batch size, and batch against online
   label aggregation. Release 2.0.1 times the same training function the
   accuracy results come from, which the cost benchmark of 2.0.0 did not.
+  Release 2.1.0 re-measures the cost benchmark with training timed outside
+  tracemalloc and every numerical library held to one thread, saves the
+  output of every robustness check, adds the matched stopping rule to the
+  training-budget check, measures throughput by batch size in all six
+  categories, and adds the pretrained-encoder baselines with their outputs;
+  the accuracy results are unchanged from 2.0.1.
   Release 1.1.0 remains the version that reproduces the
   numbers of arXiv:2606.02004v3. Contains no proprietary or production data.
 type: software
@@ -26,9 +32,12 @@ authors:
   - given-names: Vladimir
     family-names: Beskorovainyi
     orcid: "https://orcid.org/0009-0004-7005-6242"
-    affiliation: "Besk Tech; Moscow Institute of Physics and Technology (MIPT)"
-version: "2.0.1"
-date-released: "2026-10-03"
+    affiliation: "Besk Tech"
+version: "2.1.0"
+date-released: "2026-10-17"
+# Version DOI of release 2.1.0: to be filled in once Zenodo has minted it, e.g.
+# doi: "10.5281/zenodo.XXXXXXXX"
+# Concept DOI (resolves to the latest release): 10.5281/zenodo.20909562
 doi: "10.5281/zenodo.20909562"
 license: MIT
 repository-code: "https://github.com/beskvladimir-create/cpi-coding-repro"
@@ -42,16 +51,17 @@ keywords:
   - reproducibility
 preferred-citation:
   type: article
-  title: "Machine Learning for Coding Retail Product Names to Consumer-Price Categories: A Rule-plus-Bag-of-Words Pipeline with Reliability-Weighted Human-in-the-Loop Labeling"
+  title: "Accuracy and Cost in Product Coding for Consumer Price Statistics: A Reproducible Benchmark"
   authors:
     - given-names: Vladimir
       family-names: Beskorovainyi
       orcid: "https://orcid.org/0009-0004-7005-6242"
+      affiliation: "Besk Tech"
   year: 2026
   identifiers:
     - type: other
       value: "arXiv:2606.02004v3"
-      description: arXiv preprint; its numbers are reproduced by release 1.1.0 of this package
+      description: earlier arXiv preprint of the methodology; its numbers are reproduced by release 1.1.0 of this package
     - type: doi
       value: "10.5281/zenodo.20503355"
       description: Zenodo archive of the paper
