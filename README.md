@@ -20,6 +20,9 @@ tracemalloc running; all numerical libraries are held to one thread), saves
 the output of every robustness check, adds the matched stopping rule as an arm
 of the training-budget check, runs the throughput-by-batch check on all six
 categories, and adds the pretrained-encoder baseline script with its outputs.
+Release 2.1.1 is the complete form of 2.1.0: the release tagged 2.1.0 (and
+its Zenodo archive) contains only the metadata commit, because the code and
+results commit had not been pushed when it was cut. Use 2.1.1.
 It also adds sensitivity checks: a grade-token ablation that removes only the
 generator's grade block, a noise-sensitivity check over the generator's noise
 rate and kind, the final weights of the reliability-weighted rule, the
@@ -43,7 +46,7 @@ Outputs:
 - `figures/fig_accuracy_cost.pdf`  accuracy against inference cost (`make figures`)
 
 Tested on Python 3.13 (3.13.16); `requirements.txt` pins the exact package
-versions of the run that produced the 2.1.0 cost and robustness results, and
+versions of the run that produced the 2.1.0/2.1.1 cost and robustness results, and
 notes the substitution needed on Intel macOS. CNN/LSTM use PyTorch (CPU). If
 PyTorch is not installed the neural models are **skipped and reported as
 skipped** -- never silently dropped.
